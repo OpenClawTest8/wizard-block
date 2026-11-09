@@ -14,6 +14,8 @@
 <meta name="apple-mobile-web-app-title" content="Wizard">
 <title>Wizard Block</title>
 <style>
+@font-face{font-family:'Jakarta';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Jakarta';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --bg:#EFEDEA; --card:#FFFFFF; --soft:#F5F3F0; --line:#E4E0DA;
   --ink:#1D2026; --ink2:#44484F; --muted:#8C8F96;
@@ -44,7 +46,7 @@ html{color-scheme:light}
 :root[data-theme="dark"]{color-scheme:dark}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--ink);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-text-size-adjust:100%;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family:"Jakarta",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-feature-settings:"tnum" 1,"cv11" 1;
   -webkit-font-smoothing:antialiased;overscroll-behavior:none}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
 input{font:inherit;color:inherit;-webkit-user-select:text;user-select:text}
@@ -55,11 +57,11 @@ input{font:inherit;color:inherit;-webkit-user-select:text;user-select:text}
 .ibtn{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;
   box-shadow:var(--shadow);flex:none}
 .ibtn svg{width:20px;height:20px}
-.h1{font-size:34px;font-weight:700;letter-spacing:-.8px;margin:14px 4px 4px}
+.h1{font-size:36px;font-weight:800;letter-spacing:-1.2px;margin:14px 4px 4px}
 .lead{color:var(--muted);font-size:15px;margin:0 4px 22px}
 .card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:16px}
-.sec{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:26px 6px 10px;display:flex;justify-content:space-between;align-items:center}
-.sec a{text-transform:none;letter-spacing:0;color:var(--accent);font-weight:600}
+.sec{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.2px;margin:26px 4px 10px;display:flex;justify-content:space-between;align-items:center}
+.sec a{color:var(--accent);font-weight:650;font-size:13.5px}
 .pill{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 13px;border-radius:999px;
   background:var(--card);font-size:13.5px;font-weight:600;color:var(--ink2);box-shadow:var(--shadow)}
 .pill .dot{width:10px;height:10px;border-radius:50%}
@@ -234,7 +236,7 @@ tfoot td{border-top:2px solid var(--ink);font-weight:800;font-size:17px;padding:
 
 /* Sheet */
 .ov{position:fixed;inset:0;background:var(--overlay);z-index:50;display:flex;align-items:flex-end;justify-content:center;animation:fade .18s}
-.sh{background:var(--bg);width:100%;max-width:460px;border-radius:30px 30px 0 0;padding:10px 18px calc(var(--safe-b) + 20px);max-height:92vh;overflow:auto;animation:up .24s cubic-bezier(.2,.8,.2,1)}
+.sh{background:var(--bg);width:100%;max-width:460px;border-radius:30px 30px 0 0;padding:10px 18px calc(var(--safe-b) + 20px);max-height:92vh;overflow:auto}
 .sh .grab{width:40px;height:5px;border-radius:9px;background:var(--grab);margin:0 auto 14px}
 .sh h3{font-size:22px;font-weight:750;letter-spacing:-.4px;margin:2px 4px 4px}
 .sh p.s{color:var(--muted);margin:0 4px 16px;font-size:14.5px;line-height:1.4}
@@ -282,7 +284,7 @@ td.lead{color:var(--accent)}
 .lav .av{width:58px;height:58px;font-size:22px}
 .lbadge{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;background:var(--btn-bg);color:var(--btn-fg);box-shadow:0 2px 6px rgba(0,0,0,.18)}
 .lnm{flex:1;min-width:0}
-.lnm small{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.lnm small{display:block;font-size:12.5px;font-weight:650;color:var(--muted)}
 .lnm b{display:block;font-size:20px;font-weight:800;letter-spacing:-.3px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lsc{text-align:right}
 .lsc b{display:block;font-size:30px;font-weight:850;letter-spacing:-1px;color:var(--accent);line-height:1}
@@ -338,6 +340,61 @@ table.blk tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 5
 table.blk tbody tr:nth-child(even) td.rn{background:color-mix(in srgb,var(--soft) 55%,var(--card))}
 table.blk tr.open td{opacity:.75}
 table.blk tfoot td.lead{color:var(--accent)}
+
+/* Bewegung */
+:root{--e-out:cubic-bezier(.22,1,.36,1);--e-spring:cubic-bezier(.34,1.56,.64,1)}
+.secm{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:0}
+button{transition:transform .16s var(--e-out),background-color .2s,color .2s,box-shadow .2s,border-color .2s}
+button:active{transform:scale(.97)}
+.rrow:active,.it:active{transform:none;background:var(--soft)}
+.rrow,.it{border-radius:14px}
+#app[data-fx~="enter"]>*:not(.nav):not(.sticky){animation:rise .46s var(--e-out) both;animation-delay:calc(min(var(--i,0),12)*38ms)}
+#app[data-fx~="tab"] .tabc>*{animation:rise .4s var(--e-out) both;animation-delay:calc(min(var(--i,0),12)*40ms)}
+#app[data-fx~="phase"] .pl .stp,#app[data-fx~="phase"] .pl .bidchip{animation:popin .42s var(--e-spring) both;animation-delay:calc(min(var(--i,0),10)*45ms)}
+#app[data-fx~="phase"] .phase div{transition:none;animation:fadein .3s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes fadein{from{opacity:0}}
+@keyframes popin{from{opacity:0;transform:scale(.7)}}
+.val.bump-up{animation:bumpUp .34s var(--e-out)}
+.val.bump-down{animation:bumpDown .34s var(--e-out)}
+@keyframes bumpUp{0%{transform:translateY(55%);opacity:0;color:var(--accent)}60%{color:var(--accent)}}
+@keyframes bumpDown{0%{transform:translateY(-55%);opacity:0;color:var(--accent)}60%{color:var(--accent)}}
+.stp{overflow:hidden}
+.gauge .sg{transform-box:fill-box;transform-origin:center}
+.gauge .sg.cur{animation:breathe 2.4s ease-in-out infinite}
+.gauge .sg.just{animation:segin .9s var(--e-spring) both .15s}
+.gauge .gbig{transform-box:fill-box;transform-origin:center}
+#app[data-fx~="roundadv"] .gauge .gbig{animation:popin .5s var(--e-spring) both .25s}
+@keyframes breathe{50%{opacity:.45}}
+@keyframes segin{0%{transform:scale(.3);filter:brightness(1.8)}100%{transform:none;filter:none}}
+#app[data-fx~="stat"] .bar span,.ov:not(.still) .bar span{animation:grow .9s var(--e-out) both;animation-delay:calc(.12s + min(var(--i,0),10)*70ms)}
+#app[data-fx~="stat"] .gem,.ov:not(.still) .gem{animation:popin .5s var(--e-spring) both;animation-delay:calc(.05s + min(var(--i,0),10)*70ms)}
+@keyframes grow{from{transform:scaleX(0)}}
+.bar span{transform-origin:left center}
+.ln{stroke-dasharray:1;stroke-dashoffset:0}
+#app[data-fx~="stat"] .ln,#app[data-fx~="enter"] .ln{animation:draw 1.1s var(--e-out) both .15s}
+@keyframes draw{from{stroke-dashoffset:1}}
+#app[data-fx~="stat"] .rb i,.ov:not(.still) .rb i{animation:fadein .5s ease both;animation-delay:calc(.2s + var(--k,0)*25ms)}
+.ov{backdrop-filter:blur(6px) saturate(120%);-webkit-backdrop-filter:blur(6px) saturate(120%)}
+.ov .sh{animation:sheetup .42s var(--e-out)}
+.ov.still,.ov.still .sh{animation:none}
+.ov.out{animation:fadeout .2s ease forwards}
+.ov.out .sh{animation:sheetdown .22s ease-in forwards}
+@keyframes sheetup{from{transform:translateY(100%)}}
+@keyframes sheetdown{to{transform:translateY(100%)}}
+@keyframes fadeout{to{opacity:0}}
+.ov:not(.still) .sh .rk{animation:rise .45s var(--e-out) both;animation-delay:calc(.15s + var(--i,0)*60ms)}
+.mv{display:inline-flex;align-items:center;gap:2px;font-size:11px;font-weight:800;padding:1px 6px 1px 4px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.mv svg{width:10px;height:10px}
+.mv.up{background:var(--ok-soft);color:var(--ok)}.mv.dn{background:var(--bad-soft);color:var(--bad)}
+.full .pad button{animation:popin .36s var(--e-spring) both;animation-delay:calc(var(--i,0)*22ms)}
+.full>*{animation:rise .4s var(--e-out) both}
+.newcard{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.newcard .ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--accent-soft);color:var(--acc-fg);flex:none}
+.newcard .ico svg{width:30px;height:30px}
+.newcard b{display:block;font-size:19px;font-weight:800;letter-spacing:-.3px}
+.newcard small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:none;opacity:1}}
@@ -572,17 +629,29 @@ function gauge(total, doneCount, cur, big, top, bottom) {
     let fill = 'var(--g-future)';
     if (i < doneCount) fill = i % 2 ? 'var(--g-done2)' : 'var(--g-done1)';
     else if (i === cur) fill = 'var(--g-cur)';
-    s += `<rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="${Math.min(w / 2, 11)}" style="fill:${fill}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${a.toFixed(1)})"/>`;
+    const cls = i === cur && i >= doneCount ? 'cur' : (fxOn('roundadv') && i === doneCount - 1 ? 'just' : '');
+    s += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${a.toFixed(1)})"><rect class="sg ${cls}" x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="${Math.min(w / 2, 11)}" style="fill:${fill}"/></g>`;
   }
   return `<div class="gauge"><svg viewBox="0 0 300 236">${s}
     <path d="M150 68 l3.2 8.8 8.8 3.2 -8.8 3.2 -3.2 8.8 -3.2 -8.8 -8.8 -3.2 8.8 -3.2z" style="fill:var(--accent)"/><circle cx="166" cy="70" r="1.8" style="fill:var(--accent2)"/><circle cx="135" cy="88" r="1.4" style="fill:var(--accent2)"/>
     <text x="150" y="112" text-anchor="middle" font-size="14" font-weight="600" style="fill:var(--muted)">${esc(top)}</text>
-    <text x="150" y="160" text-anchor="middle" font-size="50" font-weight="800" style="fill:var(--ink)" letter-spacing="-1.5">${esc(big)}</text>
+    <text class="gbig" x="150" y="160" text-anchor="middle" font-size="52" font-weight="800" style="fill:var(--ink)" letter-spacing="-2">${esc(big)}</text>
     <text x="150" y="188" text-anchor="middle" font-size="14.5" font-weight="650" style="fill:var(--accent)">${esc(bottom)}</text>
   </svg></div>`;
 }
 
 /* ===== Render ===== */
+const fxOn = k => (ui.fx || []).includes(k);
+function stagger(list) { list.forEach((c, k) => c.style.setProperty('--i', k)); }
+function countUp(el) {
+  const to = +el.dataset.count, from = +(el.dataset.from || 0), signed = el.dataset.fmt === 'signed', plus = el.dataset.fmt === 'plus';
+  const f = v => signed ? fmt(v) : plus ? '+' + v : num(v);
+  if (from === to || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = f(to); return; }
+  const t0 = performance.now(), dur = 750;
+  el.textContent = f(from);
+  const step = t => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = f(Math.round(from + (to - from) * e)); if (k < 1) requestAnimationFrame(step); };
+  setTimeout(() => requestAnimationFrame(step), +(el.dataset.delay || 0));
+}
 function render() {
   const app = $('#app');
   if (ui.screen === 'home') app.innerHTML = homeHTML();
@@ -590,6 +659,16 @@ function render() {
   else if (ui.screen === 'game' && store.game) app.innerHTML = gameHTML();
   else if (ui.screen === 'end') app.innerHTML = endHTML();
   else { ui.screen = 'home'; app.innerHTML = homeHTML(); }
+  app.dataset.fx = (ui.fx || []).join(' ');
+  stagger([...app.children]);
+  app.querySelectorAll('.tabc').forEach(t => stagger([...t.children]));
+  stagger([...app.querySelectorAll('.pl')].map(r => { r.querySelectorAll('.stp,.bidchip').forEach(x => x.style.setProperty('--i', [...r.parentNode.children].indexOf(r))); return r; }));
+  app.querySelectorAll('.rlist, .vlist').forEach(l => [...l.children].forEach((row, k) => row.querySelectorAll('.bar span,.gem').forEach(x => x.style.setProperty('--i', k))));
+  app.querySelectorAll('.rbcols').forEach(c => [...c.children].forEach((b, k) => b.firstElementChild && b.firstElementChild.style.setProperty('--k', k)));
+  if (fxOn('stat') || fxOn('enter')) app.querySelectorAll('[data-count]').forEach(countUp);
+  else app.querySelectorAll('[data-count]').forEach(el => { el.dataset.from = el.dataset.count; countUp(el); });
+  if (ui.bump) { const v = app.querySelector(ui.bump.sel); if (v) { v.classList.add(ui.bump.dir > 0 ? 'bump-up' : 'bump-down'); ui.bump = null; } }
+  ui.fx = [];
   renderLayer();
 }
 
@@ -607,8 +686,12 @@ function homeHTML() {
       <div style="margin-top:16px"><button class="btn" data-act="resume">Weiterspielen</button></div></div>
       <button class="btn light" data-act="newgame">Neues Spiel</button>`;
   } else {
-    h += `<div class="hero">${gauge(15, 6, 6, 'Neu', 'Bereit für', 'eine Partie')}
-      <div style="margin-top:6px"><button class="btn" data-act="newgame">Neues Spiel starten</button></div></div>`;
+    const hs = store.history, wins = {};
+    hs.forEach(hg => { const w = hg.players[ranking(hg)[0].i].name; wins[w] = (wins[w] || 0) + 1; });
+    const top = Object.entries(wins).sort((a, b) => b[1] - a[1])[0];
+    h += `<div class="hero"><div class="newcard"><span class="ico">${I.hat}</span><div><b>Neue Partie</b><small>Klassik, Jubiläum, Junior oder Extreme</small></div></div>
+      ${hs.length ? `<div class="kpis" style="margin:0 0 16px"><div><b>${hs.length}</b><small>Partien</small></div><div><b>${hs.reduce((a, hg) => a + hg.rounds.filter(x => x.done).length, 0)}</b><small>Runden</small></div><div><b style="font-size:15px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px">${esc(top[0])}</b><small>Meiste Siege</small></div></div>` : ''}
+      <button class="btn" data-act="newgame">Neues Spiel starten</button></div>`;
   }
   h += `<div class="sec">Letzte Spiele ${store.history.length ? '<a data-act="clearhist">Leeren</a>' : ''}</div>`;
   if (!store.history.length) h += `<div class="card"><div class="empty">Abgeschlossene Spiele erscheinen hier.</div></div>`;
@@ -634,7 +717,7 @@ function setupHTML() {
     Object.entries(EDITIONS).map(([k, e]) => `<button class="ed ${s.edition === k ? 'on' : ''}" data-act="ed" data-v="${k}">
       <div class="ic">${EDICON[k]}</div><div class="n">${e.name}</div><div class="d">${e.sub}</div></button>`).join('') + `</div>`;
 
-  h += `<div class="sec">Mitspieler <span style="text-transform:none;letter-spacing:0">${n} von ${ed.min} bis ${ed.max}</span></div><div class="card" style="padding:6px 14px">` +
+  h += `<div class="sec">Mitspieler <span class="secm">${n} von ${ed.min} bis ${ed.max}</span></div><div class="card" style="padding:6px 14px">` +
     s.players.map((p, i) => `<div class="prow">${av(p)}
       <input data-name="${i}" value="${esc(p.name)}" placeholder="Spieler ${i + 1}" maxlength="16" autocomplete="off">
       ${i > 0 ? `<button class="mbtn" data-act="pup" data-i="${i}" aria-label="Nach oben">${I.up}</button>` : ''}
@@ -693,7 +776,7 @@ function gameHTML() {
   let h = `<div class="top"><button class="ibtn" data-act="home" aria-label="Start">${I.back}</button>
     <div class="title">${EDITIONS[g.edition].name}${g.edition === 'classic' && g.mode !== 'standard' ? ' · ' + MODES[g.mode] : ''}</div>
     <button class="ibtn" data-act="menu" aria-label="Menü">${I.more}</button></div>`;
-  h += ui.tab === 'round' ? roundHTML(g) : tableHTML(g);
+  h += `<div class="tabc">${ui.tab === 'round' ? roundHTML(g) : tableHTML(g)}</div>`;
   h += `<div class="nav"><button class="${ui.tab === 'round' ? 'on' : ''}" data-act="tab" data-v="round">${I.cards} Runde</button>
     <button class="${ui.tab === 'table' ? 'on' : ''}" data-act="tab" data-v="table">${I.table} Tabelle</button></div>`;
   return h;
@@ -760,7 +843,7 @@ function roundHTML(g) {
   const soft = bidPhase && err && g.bidMode !== 'open' && allSet(rd.bids) && rd.bids.every((b, k) => isTipped(rd, k)); // Warnung, aber erlaubt
   h += `<div style="margin-top:16px"><button class="btn" data-act="${bidPhase ? 'confirmbids' : 'score'}" ${err && !soft ? 'disabled' : ''}>
     ${bidPhase ? (g.bidMode === 'hidden' ? 'Aufdecken und spielen' : g.bidMode === 'secret' ? 'Tipps abgegeben, spielen' : 'Vorhersagen fertig') : 'Runde werten'}</button>
-    <p class="hint ${err ? 'bad' : ''}">${err ? esc(err) : bidPhase ? 'Jetzt die Stiche spielen.' : ''}</p>
+    <p class="hint ${err ? 'bad' : ''}">${err ? esc(err) : ''}</p>
     ${!bidPhase ? `<button class="linkbtn" data-act="backbids">Zurück zur Vorhersage</button>` : ''}</div>`;
   return h;
 }
@@ -875,7 +958,7 @@ function leaderCard(g, final) {
   return `<div class="lcard pop"><div class="lrow">
       <div class="lav" style="--pc:${p.color}">${av(p)}<span class="lbadge">${tied ? 'gleichauf' : final ? 'Sieger' : 'Platz 1'}</span></div>
       <div class="lnm"><small>${final ? 'Endstand' : 'Führung'}</small><b>${esc(tied ? rk.filter(x => x.pos === 1).map(x => g.players[x.i].name).join(' & ') : p.name)}</b></div>
-      <div class="lsc"><b>${num(first.score)}</b><small>${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</small></div></div>
+      <div class="lsc"><b data-count="${first.score}">${num(first.score)}</b><small>${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</small></div></div>
     <div class="kpis"><div><b>${final ? done : done + '/' + totalRounds(g)}</b><small>Runden</small></div>
       <div><b>${tied ? 0 : gap}</b><small>Vorsprung</small></div><div><b>${kpi3[1]}</b><small>${kpi3[0]}</small></div></div></div>`;
 }
@@ -883,13 +966,13 @@ function leaderCard(g, final) {
 function rankList(g) {
   const rk = ranking(g), sc = rk.map(x => x.score);
   const mx = Math.max(...sc), mn = Math.min(...sc), span = mx - mn || 1;
-  return `<div class="sec">${lowWins(g) ? 'Strafpunkte' : 'Punktestand'}<span style="text-transform:none;letter-spacing:0">Spieler antippen für Details</span></div><div class="card rlist">` +
+  return `<div class="sec">${lowWins(g) ? 'Strafpunkte' : 'Punktestand'}<span class="secm">Spieler antippen für Details</span></div><div class="card rlist">` +
     rk.map(x => {
       const p = g.players[x.i], st = playerStats(g, x.i);
       const rel = lowWins(g) ? (mx - x.score) / span : (x.score - mn) / span;
       const sub = g.edition === 'extreme' ? `${st.clean} von ${st.rounds} ohne Strafe` : `${st.hits} von ${st.rounds} getroffen${st.cur >= 2 ? ' · Serie ' + st.cur : ''}`;
       return `<button class="rrow" data-act="player" data-i="${x.i}"><span class="rpos ${x.pos === 1 ? 'one' : ''}">${x.pos}</span>${av(p, 'sm')}
-        <span class="rmid"><span class="rtop"><b>${esc(p.name)}</b><em>${num(x.score)}</em></span>
+        <span class="rmid"><span class="rtop"><b>${esc(p.name)}</b><em data-count="${x.score}">${num(x.score)}</em></span>
         <span class="rbar">${gem(p.color, lighten(p.color, .45), 14)}${bar(12 + rel * 88, p.color, lighten(p.color, .45))}</span>
         <small>${sub}</small></span></button>`;
     }).join('') + `</div>`;
@@ -947,7 +1030,7 @@ function chartHTML(g) {
   [...rk].reverse().forEach(x => {
     const i = x.i, sr = series[i], c = g.players[i].color;
     const pts = sr.map((v, k) => X(k).toFixed(1) + ',' + Y(v).toFixed(1)).join(' ');
-    s += `<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="${x.pos === 1 ? 3 : 2.2}" stroke-linejoin="round" stroke-linecap="round" opacity="${x.pos === 1 ? 1 : .8}"/>`;
+    s += `<polyline class="ln" pathLength="1" points="${pts}" fill="none" stroke="${c}" stroke-width="${x.pos === 1 ? 3 : 2.2}" stroke-linejoin="round" stroke-linecap="round" opacity="${x.pos === 1 ? 1 : .8}"/>`;
     s += `<circle cx="${X(done)}" cy="${Y(sr[done])}" r="4.5" fill="${c}" style="stroke:var(--card)" stroke-width="2.5"/>`;
   });
   return `<div class="card chart"><div class="ctitle"><b>Punkteverlauf</b><small>Runde 1 bis ${done}</small></div>
@@ -1017,7 +1100,14 @@ function endHTML() {
 /* ===== Overlays ===== */
 function renderLayer() {
   const L = $('#layer'), s = ui.sheet;
-  if (!s) { L.innerHTML = ''; return; }
+  if (!s) {
+    const ov = L.querySelector('.ov');
+    if (ov && !ov.classList.contains('out')) { ov.classList.add('out'); ui.shown = null; setTimeout(() => { if (!ui.sheet) L.innerHTML = ''; }, 220); }
+    else if (!ov) L.innerHTML = '';
+    return;
+  }
+  const still = ui.shown === s || (ui.shown && ui.shown.type === s.type && s.type === 'edit' && ui.shown.r === s.r) || (ui.shown && ui.shown.parent === s);
+  const keepScroll = L.querySelector('.sh') ? L.querySelector('.sh').scrollTop : 0;
   const g = store.game;
   let h = '';
   if (s.type === 'pad') {
@@ -1039,6 +1129,10 @@ function renderLayer() {
   } else if (s.type === 'result') {
     const r = s.r, rk = ranking(g);
     const last = r >= totalRounds(g) - 1;
+    const before = totalsUpTo(g, r), after = totals(g);
+    const posOf = arr => arr.map((v, i) => 1 + arr.filter(w => lowWins(g) ? w < v : w > v).length);
+    const pb = posOf(before), pa = posOf(after);
+    const chev = up => `<svg viewBox="0 0 10 10" fill="currentColor"><path d="${up ? 'M5 2l4 5H1z' : 'M5 8L1 3h8z'}"/></svg>`;
     h = sheet(`<h3>Runde ${r + 1} gewertet</h3><p class="s">${last ? 'Das war die letzte Runde.' : 'Weiter geht es mit Runde ' + (r + 2) + '.'}</p>
       <div class="card" style="padding:4px 14px">${rk.map(x => {
         const p = g.players[x.i], d = roundScore(g, r, x.i), rd = g.rounds[r];
@@ -1049,8 +1143,9 @@ function renderLayer() {
           info = t === b ? 'Getroffen: ' + plural(t, 'Stich', 'Stiche') : 'Angesagt ' + b + ', gemacht ' + t;
         }
         const good = lowWins(g) ? d === 0 : d > 0;
-        return `<div class="rk"><div class="pos">${x.pos}</div>${av(p, 'sm')}<div class="nm">${esc(p.name)}<small>${info}</small></div>
-          <div class="delta ${good ? 'p' : d === 0 ? '' : 'm'}">${lowWins(g) ? '+' + d : fmt(d)}</div><div class="sc" style="min-width:52px;text-align:right">${num(x.score)}</div></div>`;
+        const mv = r > 0 && pb[x.i] !== pa[x.i] ? `<span class="mv ${pa[x.i] < pb[x.i] ? 'up' : 'dn'}">${chev(pa[x.i] < pb[x.i])}${Math.abs(pb[x.i] - pa[x.i])}</span>` : '';
+        return `<div class="rk"><div class="pos">${x.pos}</div>${av(p, 'sm')}<div class="nm">${esc(p.name)}${mv}<small>${info}</small></div>
+          <div class="delta ${good ? 'p' : d === 0 ? '' : 'm'}" data-count="${d}" data-fmt="${lowWins(g) ? 'plus' : 'signed'}" data-delay="250">${lowWins(g) ? '+' + d : fmt(d)}</div><div class="sc" style="min-width:52px;text-align:right" data-count="${x.score}" data-from="${before[x.i]}" data-delay="450">${num(x.score)}</div></div>`;
       }).join('')}</div>
       <div style="margin-top:16px"><button class="btn" data-act="next">${last ? 'Zum Endstand' : 'Nächste Runde'}</button></div>`, true);
   } else if (s.type === 'menu') {
@@ -1077,6 +1172,17 @@ function renderLayer() {
     h = sheet(rulesHTML(), true);
   }
   L.innerHTML = h;
+  const ov = L.querySelector('.ov');
+  if (ov && still) { ov.classList.add('still'); const sh = ov.querySelector('.sh'); if (sh) sh.scrollTop = keepScroll; }
+  if (!still) {
+    L.querySelectorAll('.sh .rk').forEach((r, k) => r.style.setProperty('--i', k));
+    L.querySelectorAll('.vlist').forEach(l => [...l.children].forEach((row, k) => row.querySelectorAll('.bar span,.gem').forEach(x => x.style.setProperty('--i', k))));
+    L.querySelectorAll('.rbcols').forEach(c => [...c.children].forEach((b, k) => b.firstElementChild && b.firstElementChild.style.setProperty('--k', k)));
+    L.querySelectorAll('.full .pad button').forEach((b, k) => b.style.setProperty('--i', k));
+    L.querySelectorAll('[data-count]').forEach(countUp);
+  }
+  if (ui.bump) { const v = L.querySelector(ui.bump.sel); if (v) v.classList.add(ui.bump.dir > 0 ? 'bump-up' : 'bump-down'); ui.bump = null; }
+  ui.shown = s;
 }
 function sheet(inner, tall) { return `<div class="ov" data-act="ovclose"><div class="sh" ${tall ? 'style="max-height:94vh"' : ''}><div class="grab"></div>${inner}</div></div>`; }
 const range = n => Array.from({ length: n + 1 }, (_, k) => k);
@@ -1166,7 +1272,7 @@ function startGame(base) {
   };
   g.rounds.push(newRound(g, 0));
   store.game = g; store.lastNames = players.map(p => p.name);
-  ui.screen = 'game'; ui.tab = 'round'; ui.sheet = null; ui.view = null;
+  ui.screen = 'game'; ui.tab = 'round'; ui.sheet = null; ui.view = null; ui.fx = ['enter'];
   save(); render(); window.scrollTo(0, 0);
 }
 function finishGame() {
@@ -1175,7 +1281,7 @@ function finishGame() {
   g.finished = Date.now();
   store.history.unshift(JSON.parse(JSON.stringify(g)));
   store.history = store.history.slice(0, 40);
-  ui.view = g; store.game = null; ui.screen = 'end'; ui.sheet = null;
+  ui.view = g; store.game = null; ui.screen = 'end'; ui.sheet = null; ui.fx = ['enter', 'stat'];
   save(); render(); window.scrollTo(0, 0);
 }
 
@@ -1210,9 +1316,15 @@ document.addEventListener('click', e => {
     case 'stattab': ui.statTab = d.v; break;
     case 'player': ui.sheet = { type: 'player', i: +d.i }; renderLayer(); return;
     case 'theme': store.theme = store.theme === 'dark' ? 'light' : 'dark'; applyTheme(); if (ui.sheet && ui.sheet.type === 'menu') ui.sheet = null; break;
-    case 'inc': case 'dec': step(d.ctx, +d.r, +d.i, d.f, a === 'inc' ? 1 : -1); break;
+    case 'inc': case 'dec': {
+      const rd0 = refRound(d.ctx, +d.r), before = d.f === 'bids' || d.f === 'tricks' ? rd0[d.f][+d.i] : rd0.ex[d.f][+d.i];
+      step(d.ctx, +d.r, +d.i, d.f, a === 'inc' ? 1 : -1);
+      const rd1 = refRound(d.ctx, +d.r), after = d.f === 'bids' || d.f === 'tricks' ? rd1[d.f][+d.i] : rd1.ex[d.f][+d.i];
+      if (after !== before) ui.bump = { sel: `.val[data-ctx="${d.ctx}"][data-r="${d.r}"][data-i="${d.i}"][data-f="${d.f}"]`, dir: a === 'inc' ? 1 : -1 };
+      break;
+    }
     case 'pad': ui.sheet = { type: 'pad', ctx: d.ctx, r: +d.r, i: +d.i, f: d.f, draft: ui.sheet && ui.sheet.draft, parent: ui.sheet && ui.sheet.type === 'edit' ? ui.sheet : null }; break;
-    case 'padset': { const sh = ui.sheet; setVal(sh.ctx, sh.r, sh.i, sh.f, +d.v); ui.sheet = sh.parent || null; break; }
+    case 'padset': { const sh = ui.sheet; const rd0 = refRound(sh.ctx, sh.r), b0 = sh.f === 'bids' || sh.f === 'tricks' ? rd0[sh.f][sh.i] : rd0.ex[sh.f][sh.i]; setVal(sh.ctx, sh.r, sh.i, sh.f, +d.v); if (+d.v !== b0) ui.bump = { sel: `.val[data-ctx="${sh.ctx}"][data-r="${sh.r}"][data-i="${sh.i}"][data-f="${sh.f}"]`, dir: +d.v > (b0 || 0) ? 1 : -1 }; ui.sheet = sh.parent || null; break; }
     case 'pass': ui.sheet = { type: 'pass', i: +d.i, stage: 'hand' }; break;
     case 'passshow': ui.sheet.stage = 'pick'; break;
     case 'passset': { const rd = g.rounds[g.current]; rd.bids[ui.sheet.i] = +d.v; if (!rd.tipped) rd.tipped = rd.bids.map(b => b !== null); rd.tipped[ui.sheet.i] = true; ui.sheet = null; save(); break; }
@@ -1232,7 +1344,7 @@ document.addEventListener('click', e => {
       const r = ui.sheet.r; ui.sheet = null;
       if (r >= totalRounds(g) - 1) { finishGame(); return; }
       g.current = r + 1; if (!g.rounds[g.current]) g.rounds.push(newRound(g, g.current));
-      save(); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
+      ui.fx = ['enter', 'roundadv']; save(); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
     }
     case 'trump': ui.sheet = { type: 'trump' }; break;
     case 'settrump': g.rounds[g.current].trump = d.v || null; ui.sheet = null; save(); break;
@@ -1255,6 +1367,10 @@ document.addEventListener('click', e => {
       startGame(base); return;
     }
   }
+  const FX = { home: 'enter', resume: 'enter', gosetup: 'enter', leaveend: 'enter', viewhist: 'enter stat', confirmbids: 'phase', backbids: 'phase', stattab: 'tab stat' };
+  if (a === 'newgame' && !store.game) ui.fx = ['enter'];
+  if (a === 'tab') ui.fx = d.v === 'table' ? ['tab', 'stat'] : ['tab'];
+  if (FX[a]) ui.fx = FX[a].split(' ');
   if (ui.sheet && ui.sheet.parent && ui.sheet.type === 'edit') ui.sheet.parent = null;
   save();
   if (a === 'pad' || a === 'pass' || a === 'passshow' || a === 'trump' || a === 'menu' || a === 'rules' || a === 'editround' || a === 'finishnow' || a === 'discard' || a === 'clearhist') { renderLayer(); return; }

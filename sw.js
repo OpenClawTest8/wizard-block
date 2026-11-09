@@ -1,7 +1,8 @@
 // Wizard Block: Offline-Cache. Bei jeder neuen Version VERSION erhöhen.
-const VERSION = 'wizard-block-v2';
+const VERSION = 'wizard-block-v3';
 const FILES = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
-  './icons/icon-maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'];
+  './icons/icon-maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png',
+  './fonts/plus-jakarta-sans-latin-wght-normal.woff2', './fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
