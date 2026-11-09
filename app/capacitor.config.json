@@ -1,0 +1,11 @@
+{
+  "appId": "de.moritz.wizardblock",
+  "appName": "Wizard Block",
+  "webDir": "www",
+  "backgroundColor": "#17191E",
+  "ios": { "contentInset": "never", "scrollEnabled": true },
+  "android": { "allowMixedContent": false },
+  "plugins": {
+    "StatusBar": { "overlaysWebView": false, "style": "DARK", "backgroundColor": "#17191E" }
+  }
+}

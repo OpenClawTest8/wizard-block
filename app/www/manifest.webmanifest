@@ -1,0 +1,19 @@
+{
+  "name": "Wizard Block",
+  "short_name": "Wizard Block",
+  "description": "Punkteblock für das Kartenspiel Wizard mit allen Versionen und Varianten.",
+  "lang": "de",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#17191E",
+  "theme_color": "#17191E",
+  "categories": ["games", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "wizard-block",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wizard Block: Punkteblock für das Kartenspiel Wizard",
+  "scripts": {
+    "sync": "cap sync",
+    "android": "cap sync android && cap open android",
+    "ios": "cap sync ios && cap open ios",
+    "assets": "capacitor-assets generate --android --ios --iconBackgroundColor '#17191E' --iconBackgroundColorDark '#17191E' --splashBackgroundColor '#17191E' --splashBackgroundColorDark '#17191E'"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/haptics": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "@capacitor/status-bar": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.0.0"
+  }
+}

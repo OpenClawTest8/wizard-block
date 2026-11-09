@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2E37"/><stop offset="1" stop-color="#15171B"/></linearGradient>
+    <linearGradient id="cu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBB287"/><stop offset=".55" stop-color="#D98B56"/><stop offset="1" stop-color="#B8693A"/></linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <g id="art">
+    <!-- Hutkrempe -->
+    <path d="M214 742c70 52 526 52 596 0-62-44-534-44-596 0z" fill="url(#cu)"/>
+    <!-- Hutspitze -->
+    <path d="M338 706C404 548 452 404 526 290C552 250 596 222 662 214C628 240 604 276 594 330C578 420 628 580 686 706Z" fill="url(#cu)"/>
+    <!-- Hutband -->
+    <path d="M356 652c92 20 220 20 312 0l14 44c-96 22-244 22-340 0z" fill="#17191E" opacity=".55"/>
+    <!-- Sterne -->
+    <path d="M512 470l14 38 38 14-38 14-14 38-14-38-38-14 38-14z" fill="#17191E" opacity=".55"/>
+    <path d="M780 250l12 32 32 12-32 12-12 32-12-32-32-12 32-12z" fill="#EBB287"/>
+    <path d="M250 330l8 22 22 8-22 8-8 22-8-22-22-8 22-8z" fill="#EBB287" opacity=".8"/>
+    <circle cx="830" cy="430" r="9" fill="#EBB287" opacity=".7"/>
+    <circle cx="200" cy="520" r="7" fill="#EBB287" opacity=".6"/>
+  </g>
+</svg>
