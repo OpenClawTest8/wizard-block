@@ -268,6 +268,76 @@ td.lead{color:var(--accent)}
 .stat div{background:var(--soft);border-radius:16px;padding:10px 6px;text-align:center}
 .stat b{display:block;font-size:19px;font-weight:750}
 .stat small{font-size:11.5px;color:var(--muted);font-weight:600}
+
+/* Statistik */
+.shead{display:flex;align-items:center;gap:10px;margin:10px 4px 14px}
+.shead h2{margin:0;font-size:24px;font-weight:800;letter-spacing:-.5px}
+.shead .sico{width:22px;height:22px;color:var(--accent);display:grid;place-items:center}
+.shead .sico svg{width:22px;height:22px}
+.shead .smeta{margin-left:auto;font-size:13px;font-weight:600;color:var(--muted)}
+.lcard{background:var(--card);border-radius:var(--r-xl);box-shadow:var(--shadow);padding:18px 16px 14px}
+.lrow{display:flex;align-items:center;gap:14px}
+.lav{position:relative;flex:none;padding:4px;border-radius:50%;background:conic-gradient(var(--pc),color-mix(in srgb,var(--pc) 35%,transparent),var(--pc))}
+.lav .av,.pdav .av{border:3px solid var(--card)}
+.lav .av{width:58px;height:58px;font-size:22px}
+.lbadge{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;background:var(--btn-bg);color:var(--btn-fg);box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.lnm{flex:1;min-width:0}
+.lnm small{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.lnm b{display:block;font-size:20px;font-weight:800;letter-spacing:-.3px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lsc{text-align:right}
+.lsc b{display:block;font-size:30px;font-weight:850;letter-spacing:-1px;color:var(--accent);line-height:1}
+.lsc small{font-size:11.5px;font-weight:700;color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.kpis.card{margin-top:0;padding:10px}
+.kpis div{background:var(--soft);border-radius:16px;padding:10px 6px;text-align:center}
+.kpis b{display:block;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums}
+.kpis small{font-size:11px;color:var(--muted);font-weight:700}
+.rlist{padding:6px 14px}
+.rrow{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 0}
+.rrow+.rrow{border-top:1px solid var(--line)}
+.rpos{width:22px;text-align:center;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums;flex:none}
+.rpos.one{color:var(--accent)}
+.rmid{flex:1;min-width:0;display:block}
+.rtop{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.rtop b{font-size:15.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rtop em{font-style:normal;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.rbar{display:flex;align-items:center;gap:0;margin:7px 0 5px}
+.rbar .gem{margin-right:-7px;z-index:1}
+.rmid small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.gem{display:inline-block;border-radius:50%;flex:none;box-shadow:0 2px 6px rgba(0,0,0,.22), inset 0 -2px 3px rgba(0,0,0,.18)}
+.bar{flex:1;height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar span{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.vlist{padding:6px 14px}
+.vrow{display:flex;align-items:center;gap:12px;padding:12px 0}
+.vrow+.vrow{border-top:1px solid var(--line)}
+.vmid{flex:1;min-width:0}
+.vtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.vtop b{font-size:14.5px;font-weight:700}
+.vtop em{font-style:normal;font-size:13.5px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.pd{text-align:center;padding-top:6px}
+.pdav{position:relative;display:inline-block;padding:5px;border-radius:50%;background:conic-gradient(var(--pc),color-mix(in srgb,var(--pc) 35%,transparent),var(--pc));margin-bottom:12px}
+.pdav .av{width:86px;height:86px;font-size:34px}
+.pd h3{margin:8px 0 2px;text-align:center}
+.chart{padding:16px 14px 14px}
+.ctitle{display:flex;justify-content:space-between;align-items:baseline;margin:0 4px 8px}
+.ctitle b{font-size:15.5px;font-weight:750}
+.ctitle small{font-size:12px;font-weight:600;color:var(--muted)}
+.rbars{padding:12px 14px;margin-bottom:8px}
+.rbh{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px}
+.rbcols{display:flex;align-items:center;gap:3px;height:84px;background:linear-gradient(var(--line),var(--line)) center/100% 2px no-repeat}
+.rb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;position:relative}
+.rb i{display:block;width:100%;max-width:16px;border-radius:5px}
+.rb i.up{background:var(--ok);position:absolute;bottom:calc(50% + 1px);border-radius:5px 5px 2px 2px}
+.rb i.down{background:var(--bad);opacity:.85;position:absolute;top:calc(50% + 1px);border-radius:2px 2px 5px 5px}
+table.blk td .tot{font-size:15px}
+table.blk td .tot.nil{color:var(--nil)}
+table.blk td .sub{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:700;color:var(--muted);margin-top:2px}
+table.blk .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+table.blk .dot.ok{background:var(--ok)} table.blk .dot.bad{background:var(--bad)}
+table.blk tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 55%,var(--card))}
+table.blk tbody tr:nth-child(even) td.rn{background:color-mix(in srgb,var(--soft) 55%,var(--card))}
+table.blk tr.open td{opacity:.75}
+table.blk tfoot td.lead{color:var(--accent)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:none;opacity:1}}
@@ -482,6 +552,7 @@ const I = {
   edit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>',
   flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 21V4h11l-2 4 2 4H5"/></svg>',
   trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V4h6v3M6.5 7l1 13h9l1-13"/></svg>',
+  bars: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="13" width="4" height="7.5" rx="1.6"/><rect x="10" y="8" width="4" height="12.5" rx="1.6"/><rect x="16.5" y="3.5" width="4" height="17" rx="1.6"/></svg>',
   moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>',
   sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>',
   home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9H4z"/></svg>'
@@ -739,94 +810,204 @@ function extremeRoundHTML(g, r, rd, ctx) {
   return h;
 }
 
+/* ===== Statistik ===== */
+const GEMS = [['#D98B56', '#F2B88E'], ['#8E6BD6', '#BBA2F2'], ['#2FA59B', '#78D6C6'], ['#D4607E', '#F29DB2']];
+const isHit = (g, rd, i) => g.edition === 'junior' ? rd.tricks[i] === rd.bids[i] : rd.tricks[i] === effBid(g, rd, i);
+function lighten(hex, k) {
+  const n = parseInt(hex.slice(1), 16), r = n >> 16, gg = (n >> 8) & 255, b = n & 255, f = c => Math.round(c + (255 - c) * k);
+  return '#' + [f(r), f(gg), f(b)].map(v => v.toString(16).padStart(2, '0')).join('');
+}
+function gem(c1, c2, size) {
+  return `<i class="gem" style="width:${size}px;height:${size}px;background:radial-gradient(circle at 32% 28%, #fff 0 14%, ${c2} 30%, ${c1} 78%)"></i>`;
+}
+function bar(pct, c1, c2, min = 4) {
+  const w = pct <= 0 ? 0 : Math.max(min, Math.min(100, pct));
+  return `<div class="bar"><span style="width:${w}%;background:linear-gradient(90deg, ${c1}, ${c2})"></span></div>`;
+}
+function playerStats(g, i) {
+  const rs = g.rounds.map((rd, r) => ({ rd, r })).filter(x => x.rd.done);
+  const sc = rs.map(x => roundScore(g, x.r, i));
+  const st = { rounds: rs.length, total: sc.reduce((a, b) => a + b, 0), scores: sc };
+  st.avg = st.rounds ? st.total / st.rounds : 0;
+  st.best = sc.length ? (lowWins(g) ? Math.min(...sc) : Math.max(...sc)) : 0;
+  st.worst = sc.length ? (lowWins(g) ? Math.max(...sc) : Math.min(...sc)) : 0;
+  if (g.edition === 'extreme') {
+    st.clean = sc.filter(v => v === 0).length;
+    st.mage = rs.filter(x => x.rd.ex.mage === i).length;
+    let run = 0; st.streak = 0; sc.forEach(v => { run = v === 0 ? run + 1 : 0; st.streak = Math.max(st.streak, run); });
+    st.rate = st.rounds ? st.clean / st.rounds : 0;
+    return st;
+  }
+  const hits = rs.map(x => isHit(g, x.rd, i));
+  st.hits = hits.filter(Boolean).length;
+  st.rate = st.rounds ? st.hits / st.rounds : 0;
+  let run = 0; st.streak = 0; hits.forEach(h => { run = h ? run + 1 : 0; st.streak = Math.max(st.streak, run); });
+  st.cur = run;
+  st.over = rs.filter(x => x.rd.tricks[i] < (g.edition === 'junior' ? x.rd.bids[i] : effBid(g, x.rd, i))).length;
+  st.under = rs.filter(x => x.rd.tricks[i] > (g.edition === 'junior' ? x.rd.bids[i] : effBid(g, x.rd, i))).length;
+  return st;
+}
+const pct = v => Math.round(v * 100) + ' %';
+const fmtAvg = v => (Math.round(v * 10) / 10).toLocaleString('de-DE');
+
+function statHead(title, meta) {
+  return `<div class="shead"><span class="sico">${I.bars}</span><h2>${title}</h2>${meta ? `<span class="smeta">${meta}</span>` : ''}</div>`;
+}
+
 function tableHTML(g) {
-  const n = nP(g), rows = g.rounds;
-  let h = `<div class="sec" style="margin-top:8px">Block der Wahrheit <span style="text-transform:none;letter-spacing:0">Runde antippen zum Bearbeiten</span></div>
-    <div class="tblw"><div class="tbls"><table><thead><tr><th class="rn">#</th>` +
-    g.players.map(p => `<th><div class="thn">${av(p, 'sm')}<span>${esc(p.name)}</span></div></th>`).join('') + `</tr></thead><tbody>`;
+  const tab = ui.statTab || 'rank';
+  const done = g.rounds.filter(x => x.done).length;
+  let h = statHead('Statistik', done ? plural(done, 'Runde', 'Runden') + ' gewertet' : '');
+  h += `<div class="seg" style="margin-bottom:14px">${[['rank', 'Rangliste'], ['block', 'Block'], ['chart', 'Verlauf']].map(([k, v]) => `<button class="${tab === k ? 'on' : ''}" data-act="stattab" data-v="${k}">${v}</button>`).join('')}</div>`;
+  if (!done && tab !== 'block') return h + `<div class="card"><div class="empty">Nach der ersten gewerteten Runde erscheinen hier Rangliste und Werte.</div></div>`;
+  if (tab === 'rank') h += leaderCard(g) + rankList(g);
+  else if (tab === 'block') h += blockTable(g);
+  else h += chartHTML(g) + roundBars(g);
+  return h;
+}
+
+function leaderCard(g, final) {
+  const rk = ranking(g), first = rk[0], p = g.players[first.i], st = playerStats(g, first.i);
+  const gap = rk[1] ? Math.abs(first.score - rk[1].score) : 0;
+  const tied = rk.filter(x => x.pos === 1).length > 1;
+  const done = g.rounds.filter(x => x.done).length;
+  const kpi3 = g.edition === 'extreme' ? ['Ohne Strafe', String(st.clean)] : ['Trefferquote', pct(st.rate)];
+  return `<div class="lcard pop"><div class="lrow">
+      <div class="lav" style="--pc:${p.color}">${av(p)}<span class="lbadge">${tied ? 'gleichauf' : final ? 'Sieger' : 'Platz 1'}</span></div>
+      <div class="lnm"><small>${final ? 'Endstand' : 'Führung'}</small><b>${esc(tied ? rk.filter(x => x.pos === 1).map(x => g.players[x.i].name).join(' & ') : p.name)}</b></div>
+      <div class="lsc"><b>${num(first.score)}</b><small>${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</small></div></div>
+    <div class="kpis"><div><b>${final ? done : done + '/' + totalRounds(g)}</b><small>Runden</small></div>
+      <div><b>${tied ? 0 : gap}</b><small>Vorsprung</small></div><div><b>${kpi3[1]}</b><small>${kpi3[0]}</small></div></div></div>`;
+}
+
+function rankList(g) {
+  const rk = ranking(g), sc = rk.map(x => x.score);
+  const mx = Math.max(...sc), mn = Math.min(...sc), span = mx - mn || 1;
+  return `<div class="sec">${lowWins(g) ? 'Strafpunkte' : 'Punktestand'}<span style="text-transform:none;letter-spacing:0">Spieler antippen für Details</span></div><div class="card rlist">` +
+    rk.map(x => {
+      const p = g.players[x.i], st = playerStats(g, x.i);
+      const rel = lowWins(g) ? (mx - x.score) / span : (x.score - mn) / span;
+      const sub = g.edition === 'extreme' ? `${st.clean} von ${st.rounds} ohne Strafe` : `${st.hits} von ${st.rounds} getroffen${st.cur >= 2 ? ' · Serie ' + st.cur : ''}`;
+      return `<button class="rrow" data-act="player" data-i="${x.i}"><span class="rpos ${x.pos === 1 ? 'one' : ''}">${x.pos}</span>${av(p, 'sm')}
+        <span class="rmid"><span class="rtop"><b>${esc(p.name)}</b><em>${num(x.score)}</em></span>
+        <span class="rbar">${gem(p.color, lighten(p.color, .45), 14)}${bar(12 + rel * 88, p.color, lighten(p.color, .45))}</span>
+        <small>${sub}</small></span></button>`;
+    }).join('') + `</div>`;
+}
+
+function blockTable(g) {
+  const n = nP(g);
+  let h = `<div class="tblw"><div class="tbls"><table class="blk"><thead><tr><th class="rn">Rd.</th>` +
+    g.players.map(p => `<th><div class="thn">${av(p, 'xs')}<span>${esc(p.name)}</span></div></th>`).join('') + `</tr></thead><tbody>`;
   const run = Array(n).fill(0);
-  rows.forEach((rd, r) => {
+  g.rounds.forEach((rd, r) => {
     const editable = rd.done;
-    h += `<tr class="${editable ? 'edr' : ''}" ${editable ? `data-act="editround" data-r="${r}"` : ''}><td class="rn">${r + 1}</td>`;
+    h += `<tr class="${editable ? 'edr' : 'open'}" ${editable ? `data-act="editround" data-r="${r}"` : ''}><td class="rn">${r + 1}</td>`;
     for (let i = 0; i < n; i++) {
       const s = roundScore(g, r, i);
       if (s === null) {
-        const showBid = g.edition !== 'extreme' && rd.bids[i] !== null && !(g.bidMode !== 'open' && rd.phase === 'bid') && !(g.bidMode === 'secret');
-        h += `<td><span class="tot" style="color:var(--nil)">·</span>${showBid ? `<span class="bt neu">${rd.bids[i]}</span>` : ''}</td>`;
+        const showBid = g.edition !== 'extreme' && rd.phase === 'tricks' && g.bidMode !== 'secret';
+        h += `<td><span class="tot nil">${showBid ? rd.bids[i] : '·'}</span>${showBid ? '<span class="sub">Ansage</span>' : ''}</td>`;
         continue;
       }
       run[i] += s;
       if (g.edition === 'extreme') {
-        h += `<td><span class="tot">${run[i]}</span><span class="bt ${s === 0 ? 'ok' : 'bad'}">+${s}${rd.ex.mage === i ? ' SM' : ''}</span></td>`;
+        h += `<td><span class="tot">${run[i]}</span><span class="sub"><i class="dot ${s === 0 ? 'ok' : 'bad'}"></i>+${s}${rd.ex.mage === i ? ' SM' : ''}</span></td>`;
       } else {
-        const hit = g.edition === 'junior' ? rd.tricks[i] === rd.bids[i] : rd.tricks[i] === effBid(g, rd, i);
-        h += `<td><span class="tot">${num(run[i])}</span><span class="bt ${hit ? 'ok' : 'bad'}">${effBid(g, rd, i)}/${rd.tricks[i]}</span></td>`;
+        h += `<td><span class="tot">${num(run[i])}</span><span class="sub"><i class="dot ${isHit(g, rd, i) ? 'ok' : 'bad'}"></i>${effBid(g, rd, i)}/${rd.tricks[i]}</span></td>`;
       }
     }
     h += `</tr>`;
   });
-  const t = totals(g), rk = ranking(g);
-  h += `</tbody><tfoot><tr><td class="rn">Σ</td>` + t.map((v, i) => `<td style="${rk[0].i === i && g.rounds.some(x => x.done) ? 'color:var(--accent)' : ''}">${num(v)}</td>`).join('') + `</tr></tfoot></table></div></div>`;
-  h += `<p class="hint" style="text-align:left;margin:8px 6px 0">${g.edition === 'extreme' ? 'Kleine Zahl: Strafpunkte der Runde, SM steht für Schwarzmagier.' : 'Kleine Zahl: Ansage/Stiche, grün bei Treffer.'}</p>`;
-  h += chartHTML(g);
-  h += `<div class="sec">Stand</div><div class="card" style="padding:4px 14px">` + rankRows(g) + `</div>`;
+  const t = totals(g), rk = ranking(g), any = g.rounds.some(x => x.done);
+  h += `</tbody><tfoot><tr><td class="rn">Σ</td>` + t.map((v, i) => `<td class="${any && rk[0].i === i ? 'lead' : ''}">${num(v)}</td>`).join('') + `</tr></tfoot></table></div></div>`;
+  h += `<p class="hint" style="text-align:left;margin:8px 6px 0">${g.edition === 'extreme' ? 'Unten: Strafpunkte der Runde, SM für Schwarzmagier.' : 'Unten: Ansage/Stiche, Punkt grün bei Treffer.'} Gewertete Runden antippen zum Bearbeiten.</p>`;
   return h;
-}
-
-function rankRows(g, withStats) {
-  const rk = ranking(g), done = g.rounds.filter(x => x.done);
-  return rk.map(x => {
-    const p = g.players[x.i];
-    let sub = '';
-    if (withStats && g.edition !== 'extreme') {
-      const hits = g.rounds.filter(rd => rd.done && (g.edition === 'junior' ? rd.tricks[x.i] === rd.bids[x.i] : rd.tricks[x.i] === effBid(g, rd, x.i))).length;
-      sub = `<small>${hits} von ${done.length} Vorhersagen getroffen</small>`;
-    } else if (withStats) {
-      sub = `<small>${g.rounds.filter(rd => rd.done && roundScore(g, g.rounds.indexOf(rd), x.i) === 0).length} Runden ohne Strafe</small>`;
-    }
-    return `<div class="rk"><div class="pos">${x.pos}</div>${av(p, 'sm')}<div class="nm">${esc(p.name)}${sub}</div><div class="sc">${num(x.score)}</div></div>`;
-  }).join('');
 }
 
 function chartHTML(g) {
   const done = g.rounds.filter(r => r.done).length;
-  if (done < 2) return '';
-  const n = nP(g), series = g.players.map(() => [0]);
+  if (done < 1) return '';
+  const series = g.players.map(() => [0]);
   for (let r = 0; r < done; r++) { const t = totalsUpTo(g, r + 1); t.forEach((v, i) => series[i].push(v)); }
   let mn = 0, mx = 0;
   series.forEach(s => s.forEach(v => { mn = Math.min(mn, v); mx = Math.max(mx, v); }));
   if (mx === mn) mx = mn + 10;
-  const W = 320, H = 170, pl = 30, pr = 8, pt = 10, pb = 20;
+  const W = 330, H = 190, pl = 34, pr = 10, pt = 12, pb = 24;
   const X = k => pl + (W - pl - pr) * k / done, Y = v => pt + (H - pt - pb) * (1 - (v - mn) / (mx - mn));
-  let s = `<line x1="${pl}" x2="${W - pr}" y1="${Y(0)}" y2="${Y(0)}" style="stroke:var(--grid)" stroke-dasharray="3 4"/>`;
-  s += `<text x="${pl - 6}" y="${Y(mx) + 4}" text-anchor="end" font-size="10" style="fill:var(--muted)">${num(mx)}</text>`;
-  if (mn < 0) s += `<text x="${pl - 6}" y="${Y(mn) + 4}" text-anchor="end" font-size="10" style="fill:var(--muted)">${num(mn)}</text>`;
-  s += `<text x="${pl - 6}" y="${Y(0) + 4}" text-anchor="end" font-size="10" style="fill:var(--muted)">0</text>`;
-  s += `<text x="${W - pr}" y="${H - 4}" text-anchor="end" font-size="10" style="fill:var(--muted)">Runde ${done}</text>`;
-  series.forEach((sr, i) => {
+  let s = '';
+  const step = niceStep((mx - mn) / 4);
+  for (let v = Math.ceil(mn / step) * step; v <= mx; v += step) {
+    s += `<line x1="${pl}" x2="${W - pr}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--line)" ${v === 0 ? '' : 'stroke-dasharray="2 5"'}/>`;
+    s += `<text x="${pl - 8}" y="${Y(v) + 3.5}" text-anchor="end" font-size="10" font-weight="600" style="fill:var(--muted)">${num(v)}</text>`;
+  }
+  const ticks = done <= 10 ? [...Array(done).keys()].map(k => k + 1) : [1, Math.round(done / 2), done];
+  ticks.forEach(k => { s += `<text x="${X(k)}" y="${H - 6}" text-anchor="middle" font-size="10" font-weight="600" style="fill:var(--muted)">${k}</text>`; });
+  const rk = ranking(g);
+  [...rk].reverse().forEach(x => {
+    const i = x.i, sr = series[i], c = g.players[i].color;
     const pts = sr.map((v, k) => X(k).toFixed(1) + ',' + Y(v).toFixed(1)).join(' ');
-    s += `<polyline points="${pts}" fill="none" stroke="${g.players[i].color}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>`;
-    s += `<circle cx="${X(done)}" cy="${Y(sr[done])}" r="4" fill="${g.players[i].color}" style="stroke:var(--card)" stroke-width="2"/>`;
+    s += `<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="${x.pos === 1 ? 3 : 2.2}" stroke-linejoin="round" stroke-linecap="round" opacity="${x.pos === 1 ? 1 : .8}"/>`;
+    s += `<circle cx="${X(done)}" cy="${Y(sr[done])}" r="4.5" fill="${c}" style="stroke:var(--card)" stroke-width="2.5"/>`;
   });
-  return `<div class="sec">Verlauf</div><div class="card"><svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">${s}</svg>
-    <div class="lg">${g.players.map(p => `<span><i style="background:${p.color}"></i>${esc(p.name)}</span>`).join('')}</div></div>`;
+  return `<div class="card chart"><div class="ctitle"><b>Punkteverlauf</b><small>Runde 1 bis ${done}</small></div>
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">${s}</svg>
+    <div class="lg">${rk.map(x => { const p = g.players[x.i]; return `<span><i style="background:${p.color}"></i>${esc(p.name)}</span>`; }).join('')}</div></div>`;
+}
+function niceStep(raw) {
+  const p = Math.pow(10, Math.floor(Math.log10(Math.max(raw, 1)))), f = raw / p;
+  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p;
+}
+function roundBars(g, only) {
+  const rs = g.rounds.map((rd, r) => ({ rd, r })).filter(x => x.rd.done);
+  if (!rs.length) return '';
+  const players = only !== undefined ? [only] : ranking(g).map(x => x.i);
+  const all = players.flatMap(i => rs.map(x => roundScore(g, x.r, i)));
+  const mxAbs = Math.max(10, ...all.map(Math.abs));
+  return `<div class="sec">${lowWins(g) ? 'Strafpunkte je Runde' : 'Punkte je Runde'}</div>` + players.map(i => {
+    const p = g.players[i];
+    const cols = rs.map(x => {
+      const v = roundScore(g, x.r, i), hgt = v === 0 ? 0 : Math.max(4, Math.abs(v) / mxAbs * 38);
+      const good = lowWins(g) ? v === 0 : v > 0;
+      return `<span class="rb" title="Runde ${x.r + 1}: ${num(v)}"><i class="${good ? 'up' : 'down'}" style="height:${hgt}px;${good && !lowWins(g) ? `background:linear-gradient(180deg, ${lighten(p.color, .35)}, ${p.color})` : ''}"></i></span>`;
+    }).join('');
+    return `<div class="card rbars">${only === undefined ? `<div class="rbh">${av(p, 'xs')}<b>${esc(p.name)}</b></div>` : ''}<div class="rbcols">${cols}</div></div>`;
+  }).join('');
+}
+
+function playerSheetHTML(g, i) {
+  const p = g.players[i], st = playerStats(g, i), rk = ranking(g), pos = rk.find(x => x.i === i).pos;
+  let h = `<div class="pd"><div class="pdav" style="--pc:${p.color}">${av(p)}<span class="lbadge">Platz ${pos}</span></div>
+    <h3>${esc(p.name)}</h3><p class="s" style="text-align:center;margin-bottom:14px">${EDITIONS[g.edition].name} · ${plural(st.rounds, 'Runde', 'Runden')}</p></div>
+    <div class="kpis card" style="margin-bottom:12px"><div><b>${num(st.total)}</b><small>${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</small></div>
+      <div><b>${fmtAvg(st.avg)}</b><small>Ø pro Runde</small></div>
+      <div><b>${g.edition === 'extreme' ? st.mage : st.hits}</b><small>${g.edition === 'extreme' ? 'Schwarzmagier' : 'Treffer'}</small></div></div>`;
+  const rows = g.edition === 'extreme' ? [
+    ['Runden ohne Strafe', pct(st.rate), st.rate],
+    ['Längste Serie ohne Strafe', String(st.streak), st.rounds ? st.streak / st.rounds : 0],
+    ['Beste Runde', '+' + st.best, 1 - st.best / Math.max(1, st.worst)],
+    ['Schlechteste Runde', '+' + st.worst, st.worst / Math.max(1, st.worst)]
+  ] : [
+    ['Trefferquote', pct(st.rate), st.rate],
+    ['Längste Trefferserie', String(st.streak), st.rounds ? st.streak / st.rounds : 0],
+    ['Zu hoch angesagt', String(st.over), st.rounds ? st.over / st.rounds : 0],
+    ['Zu niedrig angesagt', String(st.under), st.rounds ? st.under / st.rounds : 0]
+  ];
+  h += `<div class="sec" style="margin-top:6px">Werte</div><div class="card vlist">` + rows.map(([k, v, f], n) =>
+    `<div class="vrow">${gem(GEMS[n][0], GEMS[n][1], 26)}<div class="vmid"><span class="vtop"><b>${k}</b><em>${v}</em></span>${bar(f * 100, GEMS[n][0], GEMS[n][1])}</div></div>`).join('') + `</div>`;
+  if (g.edition !== 'extreme') h += `<div class="kpis card" style="margin-top:12px"><div><b>${num(st.best)}</b><small>Beste Runde</small></div><div><b>${num(st.worst)}</b><small>Schlechteste</small></div><div><b>${st.cur}</b><small>Aktuelle Serie</small></div></div>`;
+  h += roundBars(g, i);
+  h += `<div style="margin-top:14px"><button class="btn light" data-act="close">Schließen</button></div>`;
+  return h;
 }
 
 function endHTML() {
   const g = ui.view || store.game;
   if (!g) { ui.screen = 'home'; return homeHTML(); }
-  const rk = ranking(g), winners = rk.filter(x => x.pos === 1).map(x => g.players[x.i]);
-  const done = g.rounds.filter(x => x.done).length;
   let h = `<div class="top"><button class="ibtn" data-act="leaveend" aria-label="Start">${I.home}</button>
-    <div class="title">${EDITIONS[g.edition].name} · ${new Date(g.finished || Date.now()).toLocaleDateString('de-DE')}</div><div style="width:44px"></div></div>
-    <div class="card pop" style="margin-top:8px;border-radius:var(--r-xl)"><div class="win"><div class="crown">${I.crown}</div>
-    <div class="k">${winners.length > 1 ? 'Gemeinsamer Sieg' : 'Sieger'}</div>
-    <div class="v">${winners.map(p => esc(p.name)).join(' & ')}</div>
-    <div class="s">${num(rk[0].score)} ${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</div></div>
-    <div class="stat"><div><b>${done}</b><small>Runden</small></div><div><b>${nP(g)}</b><small>Spieler</small></div>
-    <div><b>${num(rk[0].score - (rk[1] ? rk[1].score : 0)).replace('−', '')}</b><small>Vorsprung</small></div></div></div>
-    <div class="sec">Endstand</div><div class="card" style="padding:4px 14px">${rankRows(g, true)}</div>`;
-  h += chartHTML(g);
+    <div class="title">${EDITIONS[g.edition].name} · ${new Date(g.finished || Date.now()).toLocaleDateString('de-DE')}</div><div style="width:44px"></div></div>`;
+  h += statHead('Endstand', plural(g.rounds.filter(x => x.done).length, 'Runde', 'Runden'));
+  h += leaderCard(g, true) + rankList(g) + `<div style="height:14px"></div>` + chartHTML(g);
   h += `<div style="margin-top:20px;display:grid;gap:10px">
     <button class="btn" data-act="rematch">Revanche mit gleichen Spielern</button>
     <button class="btn light" data-act="leaveend">Zur Startseite</button></div>`;
@@ -890,6 +1071,8 @@ function renderLayer() {
       <button class="chip ${!rd.trump ? 'on' : ''}" data-act="settrump" data-v="">Offen lassen</button></div>`);
   } else if (s.type === 'edit') {
     h = sheet(editSheetHTML(g, s), true);
+  } else if (s.type === 'player') {
+    h = sheet(playerSheetHTML(ui.view || store.game, s.i), true);
   } else if (s.type === 'rules') {
     h = sheet(rulesHTML(), true);
   }
@@ -1024,6 +1207,8 @@ document.addEventListener('click', e => {
     case 'dealer': s.firstDealer = +d.i; break;
     case 'start': if (!setupError()) { startGame(); return; } break;
     case 'tab': ui.tab = d.v; break;
+    case 'stattab': ui.statTab = d.v; break;
+    case 'player': ui.sheet = { type: 'player', i: +d.i }; renderLayer(); return;
     case 'theme': store.theme = store.theme === 'dark' ? 'light' : 'dark'; applyTheme(); if (ui.sheet && ui.sheet.type === 'menu') ui.sheet = null; break;
     case 'inc': case 'dec': step(d.ctx, +d.r, +d.i, d.f, a === 'inc' ? 1 : -1); break;
     case 'pad': ui.sheet = { type: 'pad', ctx: d.ctx, r: +d.r, i: +d.i, f: d.f, draft: ui.sheet && ui.sheet.draft, parent: ui.sheet && ui.sheet.type === 'edit' ? ui.sheet : null }; break;
