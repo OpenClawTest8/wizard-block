@@ -1,5 +1,5 @@
 // Wizard Block: Offline-Cache. Bei jeder neuen Version VERSION erhöhen.
-const VERSION = 'wizard-block-v4';
+const VERSION = 'wizard-block-v5';
 const FILES = ['./', './index.html', './datenschutz.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
   './icons/icon-maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png',
   './fonts/plus-jakarta-sans-latin-wght-normal.woff2', './fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2'];

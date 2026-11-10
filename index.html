@@ -436,6 +436,54 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 .sbar .n,.lsc b,.kpis b,.rtop em,.stp .val,td .tot,tfoot td{font-variant-numeric:tabular-nums}
 .phase div{border-width:1px}
 .hint{font-size:13px}
+
+/* Werbung und Premium */
+:root{--ad:0px}
+html.ads{--ad:60px}
+#app{padding-bottom:calc(var(--safe-b) + 120px + var(--ad))}
+.nav{bottom:calc(var(--safe-b) + 16px + var(--ad))}
+.sticky{bottom:var(--ad)}
+html.ads .sticky{padding-bottom:16px}
+.sh{padding-bottom:calc(var(--safe-b) + 20px + var(--ad))}
+.full{padding-bottom:calc(30px + var(--ad))}
+.toast{bottom:calc(var(--safe-b) + 96px + var(--ad))}
+#adbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;height:calc(60px + var(--safe-b));padding:0 14px var(--safe-b);background:var(--card);border-top:1px solid var(--line);align-items:center;justify-content:center}
+html.ads #adbar{display:flex}
+#adbar .house{display:flex;align-items:center;gap:12px;width:100%;max-width:432px;text-align:left}
+#adbar .adtag{font-size:9.5px;font-weight:800;letter-spacing:.5px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:2px 5px;flex:none}
+#adbar .adtx{flex:1;min-width:0;font-size:13px;line-height:1.3;color:var(--ink2)}
+#adbar .adtx b{display:block;color:var(--ink);font-size:13.5px}
+#adbar .adcta{flex:none;height:34px;padding:0 14px;border-radius:99px;background:var(--btn-bg);color:var(--btn-fg);font-weight:700;font-size:13px;display:inline-flex;align-items:center}
+.lockw{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:250px}
+.lockc{filter:blur(8px) saturate(.9);opacity:.75;pointer-events:none;max-height:440px;overflow:hidden;-webkit-user-select:none;user-select:none}
+.lockw::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,var(--bg) 100%);pointer-events:none}
+.lockb{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(280px,84%);background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:22px;padding:18px 16px 16px;text-align:center;box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.lockb:active{transform:translate(-50%,-50%) scale(.98)}
+.lockb .li{width:44px;height:44px;border-radius:14px;background:var(--accent-soft);color:var(--acc-fg);display:grid;place-items:center;margin:0 auto 10px}
+.lockb .li svg{width:22px;height:22px}
+.lockb b{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.2px}
+.lockb span{display:block;font-size:13px;color:var(--muted);margin:4px 0 12px;line-height:1.35}
+.lockb em{font-style:normal;display:inline-flex;align-items:center;height:36px;padding:0 18px;border-radius:99px;background:var(--btn-bg);color:var(--btn-fg);font-weight:700;font-size:13.5px}
+.plock{display:inline-flex;align-items:center;gap:5px}
+.plock svg{width:11px;height:11px;color:var(--accent);flex:none}
+.plock i{font-style:normal;filter:blur(4.5px);opacity:.8}
+.seg button svg.lk{width:12px;height:12px;margin-left:5px;vertical-align:-1px;opacity:.7}
+.kpis b.bl{filter:blur(6px);opacity:.7}
+.pw{text-align:center;padding-top:4px}
+.pw .pico{width:64px;height:64px;border-radius:20px;margin:0 auto 12px;display:grid;place-items:center;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 80%,#fff),var(--accent));color:#17191E;box-shadow:0 10px 26px color-mix(in srgb,var(--accent) 35%,transparent)}
+.pw .pico svg{width:32px;height:32px}
+.pw h3{margin:0 0 4px;text-align:center}
+.pwl{text-align:left;padding:6px 16px;margin:14px 0}
+.pwl div{display:flex;gap:12px;align-items:flex-start;padding:11px 0}
+.pwl div+div{border-top:1px solid var(--line)}
+.pwl svg{width:20px;height:20px;color:var(--ok);flex:none;margin-top:1px}
+.pwl b{display:block;font-size:15px}
+.pwl span{display:block;font-size:13px;color:var(--muted);line-height:1.35;margin-top:1px}
+.price{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:4px 0 12px}
+.price b{font-size:30px;font-weight:800;letter-spacing:-1px}
+.price span{color:var(--muted);font-weight:650;font-size:14px}
+.legal{font-size:11.5px;color:var(--muted);line-height:1.45;margin:12px 6px 0;text-align:center}
+.legal a{color:var(--muted)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:none;opacity:1}}
@@ -445,6 +493,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 <body>
 <div id="app"></div>
 <div id="layer"></div>
+<div id="adbar"></div>
 <script>
 /* ===== CORE (Regeln und Wertung) ===== */
 const EDITIONS = {
@@ -1017,11 +1066,11 @@ function tableHTML(g) {
   const tab = ui.statTab || 'rank';
   const done = g.rounds.filter(x => x.done).length;
   let h = statHead('Statistik', done ? plural(done, 'Runde', 'Runden') + ' gewertet' : '');
-  h += `<div class="seg" style="margin-bottom:14px">${[['rank', 'Rangliste'], ['block', 'Block'], ['chart', 'Verlauf']].map(([k, v]) => `<button class="${tab === k ? 'on' : ''}" data-act="stattab" data-v="${k}">${v}</button>`).join('')}</div>`;
+  h += `<div class="seg" style="margin-bottom:14px">${[['rank', 'Rangliste'], ['block', 'Block'], ['chart', 'Verlauf']].map(([k, v]) => `<button class="${tab === k ? 'on' : ''}" data-act="stattab" data-v="${k}">${v}${k !== 'rank' && !isPremium() ? I.lock.replace('<svg', '<svg class="lk"') : ''}</button>`).join('')}</div>`;
   if (!done && tab !== 'block') return h + `<div class="card"><div class="empty">Nach der ersten gewerteten Runde erscheinen hier Rangliste und Werte.</div></div>`;
   if (tab === 'rank') h += leaderCard(g) + rankList(g);
-  else if (tab === 'block') h += blockTable(g);
-  else h += chartHTML(g) + roundBars(g);
+  else if (tab === 'block') h += locked(blockTable(g), 'Block der Wahrheit', 'Alle Runden mit Ansage und Stichen nachlesen und korrigieren.');
+  else h += locked(chartHTML(g) + roundBars(g), 'Punkteverlauf', 'Wer wann vorne lag und wie jede Runde lief.');
   return h;
 }
 
@@ -1036,13 +1085,13 @@ function leaderCard(g, final) {
       <div class="lnm"><small>${final ? 'Endstand' : 'Führung'}</small><b>${esc(tied ? rk.filter(x => x.pos === 1).map(x => g.players[x.i].name).join(' & ') : p.name)}</b></div>
       <div class="lsc"><b data-count="${first.score}">${num(first.score)}</b><small>${lowWins(g) ? 'Strafpunkte' : 'Punkte'}</small></div></div>
     <div class="kpis"><div><b>${final ? done : done + '/' + totalRounds(g)}</b><small>Runden</small></div>
-      <div><b>${tied ? 0 : gap}</b><small>Vorsprung</small></div><div><b>${kpi3[1]}</b><small>${kpi3[0]}</small></div></div></div>`;
+      <div><b>${tied ? 0 : gap}</b><small>Vorsprung</small></div><div><b class="${isPremium() ? '' : 'bl'}">${kpi3[1]}</b><small>${kpi3[0]}</small></div></div></div>`;
 }
 
 function rankList(g) {
   const rk = ranking(g), sc = rk.map(x => x.score);
   const mx = Math.max(...sc), mn = Math.min(...sc), span = mx - mn || 1;
-  return `<div class="sec">${lowWins(g) ? 'Strafpunkte' : 'Punktestand'}<span class="secm">Spieler antippen für Details</span></div><div class="card rlist">` +
+  return `<div class="sec">${lowWins(g) ? 'Strafpunkte' : 'Punktestand'}<span class="secm">${isPremium() ? 'Spieler antippen für Details' : 'Trefferwerte mit Premium'}</span></div><div class="card rlist">` +
     rk.map(x => {
       const p = g.players[x.i], st = playerStats(g, x.i);
       const rel = lowWins(g) ? (mx - x.score) / span : (x.score - mn) / span;
@@ -1050,7 +1099,7 @@ function rankList(g) {
       return `<button class="rrow" data-act="player" data-i="${x.i}"><span class="rpos ${x.pos === 1 ? 'one' : ''}">${x.pos}</span>${av(p, 'sm')}
         <span class="rmid"><span class="rtop"><b>${esc(p.name)}</b><em data-count="${x.score}">${num(x.score)}</em></span>
         <span class="rbar">${gem(p.color, lighten(p.color, .45), 14)}${bar(12 + rel * 88, p.color, lighten(p.color, .45))}</span>
-        <small>${sub}</small></span></button>`;
+        <small>${isPremium() ? sub : `<span class="plock">${I.lock}<i>${sub}</i></span>`}</small></span></button>`;
     }).join('') + `</div>`;
 }
 
@@ -1166,7 +1215,7 @@ function endHTML() {
   let h = `<div class="top"><button class="ibtn" data-act="leaveend" aria-label="Start">${I.home}</button>
     <div class="title">${EDITIONS[g.edition].name} · ${new Date(g.finished || Date.now()).toLocaleDateString('de-DE')}</div><div style="width:44px"></div></div>`;
   h += statHead('Endstand', plural(g.rounds.filter(x => x.done).length, 'Runde', 'Runden'));
-  h += leaderCard(g, true) + rankList(g) + `<div style="height:14px"></div>` + chartHTML(g);
+  h += leaderCard(g, true) + rankList(g) + `<div style="height:14px"></div>` + locked(chartHTML(g), 'Punkteverlauf', 'Der Verlauf dieser Partie Runde für Runde.');
   h += `<div style="margin-top:20px;display:grid;gap:10px">
     <button class="btn" data-act="rematch">Revanche mit gleichen Spielern</button>
     <button class="btn light" data-act="leaveend">Zur Startseite</button></div>`;
@@ -1243,6 +1292,8 @@ function renderLayer() {
       <button class="chip ${!rd.trump ? 'on' : ''}" data-act="settrump" data-v="">Offen lassen</button></div>`);
   } else if (s.type === 'edit') {
     h = sheet(editSheetHTML(g, s), true);
+  } else if (s.type === 'paywall') {
+    h = sheet(paywallHTML(), true);
   } else if (s.type === 'settings') {
     h = sheet(settingsHTML(), true);
   } else if (s.type === 'feedback') {
@@ -1421,7 +1472,11 @@ document.addEventListener('click', e => {
     case 'start': if (!setupError()) { startGame(); return; } break;
     case 'tab': ui.tab = d.v; break;
     case 'stattab': ui.statTab = d.v; break;
-    case 'player': ui.sheet = { type: 'player', i: +d.i }; renderLayer(); return;
+    case 'player': ui.sheet = isPremium() ? { type: 'player', i: +d.i } : { type: 'paywall' }; renderLayer(); return;
+    case 'paywall': ui.sheet = { type: 'paywall' }; renderLayer(); return;
+    case 'buy': buyPremium(); return;
+    case 'restore': restorePremium(); return;
+    case 'premtest': store.premiumTest = !store.premiumTest; save(); ui.sheet = null; ui.fx = ['stat']; applyAds(); render(); toast(store.premiumTest ? 'Premium zum Testen aktiv' : 'Premium-Test beendet'); return;
     case 'theme': store.theme = store.theme === 'dark' ? 'light' : 'dark'; applyTheme(); if (ui.sheet && ui.sheet.type === 'menu') ui.sheet = null; break;
     case 'inc': case 'dec': {
       const rd0 = refRound(d.ctx, +d.r), before = d.f === 'bids' || d.f === 'tricks' ? rd0[d.f][+d.i] : rd0.ex[d.f][+d.i];
@@ -1495,8 +1550,105 @@ document.addEventListener('input', e => {
     save();
   }
 });
+/* ===== Premium und Werbung =====
+   Echte Käufe und Anzeigen laufen nur in der Store-App (Capacitor).
+   Vor dem Store-Build hier die eigenen Kennungen eintragen: */
+const MONETIZE = {
+  entitlement: 'premium',                       // Name der Berechtigung in RevenueCat
+  rcKeyIOS: '', rcKeyAndroid: '',               // RevenueCat: öffentliche SDK-Schlüssel
+  adIOS: 'ca-app-pub-3940256099942544/2934735716',      // Google-Testbanner, vor Release ersetzen
+  adAndroid: 'ca-app-pub-3940256099942544/6300978111',  // Google-Testbanner, vor Release ersetzen
+  adTesting: true,
+  priceFallback: '0,99 €'
+};
+const isNative = () => !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+const nativeOS = () => isNative() ? window.Capacitor.getPlatform() : 'web';
+const isPremium = () => !!(store.premium || store.premiumTest);
+let priceString = MONETIZE.priceFallback, rcPackage = null, rcReady = false, adShown = false;
+function locked(html, title, text) {
+  if (isPremium()) return html;
+  return `<div class="lockw"><div class="lockc" aria-hidden="true">${html}</div>
+    <button class="lockb" data-act="paywall"><span class="li">${I.lock}</span><b>${title}</b><span>${text}</span><em>Premium freischalten</em></button></div>`;
+}
+function paywallHTML() {
+  const chk = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  const native = isNative();
+  return `<div class="pw"><div class="pico">${I.star.replace('stroke="currentColor"', 'stroke="#17191E"')}</div><h3>Premium</h3><p class="s" style="text-align:center;margin-bottom:0">Werbefrei spielen und alles auswerten.</p></div>
+    <div class="card pwl">
+      <div>${chk}<p style="margin:0"><b>Keine Werbung</b><span>Das Banner unten verschwindet.</span></p></div>
+      <div>${chk}<p style="margin:0"><b>Block der Wahrheit</b><span>Jede Runde nachlesen und nachträglich korrigieren.</span></p></div>
+      <div>${chk}<p style="margin:0"><b>Punkteverlauf</b><span>Diagramm und Punkte je Runde für alle Spieler.</span></p></div>
+      <div>${chk}<p style="margin:0"><b>Trefferwerte</b><span>Trefferquote, Serien und Details zu jedem Spieler.</span></p></div>
+    </div>
+    <div class="price"><b>${esc(priceString)}</b><span>pro Jahr</span></div>
+    <button class="btn" data-act="buy">Premium freischalten</button>
+    <button class="linkbtn" data-act="restore">Käufe wiederherstellen</button>
+    ${native ? '' : `<button class="linkbtn" data-act="premtest" style="margin-top:0;color:var(--accent)">Testversion: Premium kostenlos ansehen</button>`}
+    <p class="legal">Jahresabo für ${esc(priceString)}. Es verlängert sich automatisch um ein Jahr, wenn es nicht mindestens 24 Stunden vor Ablauf gekündigt wird. Kündigen kannst du jederzeit in den Einstellungen deines Store-Kontos. <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></p>`;
+}
+function renderAdbar() {
+  const bar = document.getElementById('adbar'); if (!bar) return;
+  bar.innerHTML = adShown ? '' : `<button class="house" data-act="paywall"><span class="adtag">ANZEIGE</span><span class="adtx"><b>Hier steht später Werbung</b>Werbefrei für ${esc(priceString)} im Jahr</span><span class="adcta">Entfernen</span></button>`;
+}
+async function applyAds() {
+  const want = !isPremium();
+  document.documentElement.classList.toggle('ads', want);
+  renderAdbar();
+  const A = isNative() && window.Capacitor.Plugins ? window.Capacitor.Plugins.AdMob : null;
+  if (!A) return;
+  try {
+    if (want && !adShown) {
+      await A.initialize({ initializeForTesting: MONETIZE.adTesting });
+      try { const c = await A.requestConsentInfo(); if (c && c.isConsentFormAvailable && c.status === 'REQUIRED') await A.showConsentForm(); } catch (e) {}
+      await A.showBanner({ adId: nativeOS() === 'ios' ? MONETIZE.adIOS : MONETIZE.adAndroid, adSize: 'ADAPTIVE_BANNER', position: 'BOTTOM_CENTER', margin: 0, isTesting: MONETIZE.adTesting });
+      adShown = true; renderAdbar();
+    } else if (!want && adShown) { await A.removeBanner(); adShown = false; }
+  } catch (e) { adShown = false; renderAdbar(); }
+}
+function setPremium(v) {
+  if (!!store.premium === !!v) return;
+  store.premium = !!v; save(); applyAds();
+  if (ui.screen) { ui.fx = ['stat']; render(); }
+}
+async function initBilling() {
+  const P = isNative() && window.Capacitor.Plugins ? window.Capacitor.Plugins.Purchases : null;
+  const key = nativeOS() === 'ios' ? MONETIZE.rcKeyIOS : MONETIZE.rcKeyAndroid;
+  if (!P || !key) return;
+  try {
+    await P.configure({ apiKey: key });
+    rcReady = true;
+    try { await P.addCustomerInfoUpdateListener(info => setPremium(hasEntitlement(info))); } catch (e) {}
+    const res = await P.getCustomerInfo(); setPremium(hasEntitlement(res.customerInfo || res));
+    const off = await P.getOfferings(); const cur = off && off.current;
+    rcPackage = cur ? (cur.annual || (cur.availablePackages || [])[0]) : null;
+    if (rcPackage && rcPackage.product && rcPackage.product.priceString) { priceString = rcPackage.product.priceString; renderAdbar(); }
+  } catch (e) { rcReady = false; }
+}
+function hasEntitlement(info) {
+  const act = info && info.entitlements && info.entitlements.active;
+  return !!(act && act[MONETIZE.entitlement]);
+}
+async function buyPremium() {
+  if (!isNative()) { toast('Der Kauf ist erst in der Store-App möglich'); return; }
+  const P = window.Capacitor.Plugins.Purchases;
+  if (!P || !rcReady || !rcPackage) { toast('Kauf gerade nicht verfügbar, bitte später erneut'); return; }
+  try {
+    const res = await P.purchasePackage({ aPackage: rcPackage });
+    if (hasEntitlement(res.customerInfo)) { ui.sheet = null; setPremium(true); renderLayer(); toast('Premium ist aktiv. Danke!'); }
+  } catch (e) { if (!(e && (e.userCancelled || e.code === '1'))) toast('Kauf nicht abgeschlossen'); }
+}
+async function restorePremium() {
+  if (!isNative()) { toast('Wiederherstellen ist erst in der Store-App möglich'); return; }
+  const P = window.Capacitor.Plugins.Purchases;
+  if (!P || !rcReady) { toast('Gerade nicht verfügbar, bitte später erneut'); return; }
+  try {
+    const res = await P.restorePurchases(); const ok = hasEntitlement(res.customerInfo || res);
+    if (ok) { ui.sheet = null; setPremium(true); renderLayer(); toast('Premium wiederhergestellt'); } else toast('Kein aktives Abo gefunden');
+  } catch (e) { toast('Wiederherstellen fehlgeschlagen'); }
+}
+
 /* ===== Absicherung: Pausieren, Einstellungen, Feedback, Sicherung, Installation ===== */
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 function pauseCurrent() {
   if (!store.game) return;
   store.paused.unshift(store.game);
@@ -1537,6 +1689,9 @@ function settingsHTML() {
   return `<h3>Einstellungen</h3><p class="s">Wizard Block ${APP_VERSION}</p>
     <div class="sec" style="margin-top:4px">Design</div>
     <div class="seg"><button class="${store.theme === 'dark' ? 'on' : ''}" data-act="settheme" data-v="dark">Dunkel</button><button class="${store.theme === 'light' ? 'on' : ''}" data-act="settheme" data-v="light">Hell</button></div>
+    <div class="sec">Premium</div><div class="menu">
+      ${isPremium() ? `<div class="mi" style="cursor:default">${I.star} ${store.premiumTest && !store.premium ? 'Premium (Testzugang)' : 'Premium aktiv'}</div>${store.premiumTest && !store.premium ? `<button class="mi" data-act="premtest">${I.x} Testzugang beenden</button>` : ''}`
+        : `<button class="mi" data-act="paywall">${I.star} Werbefrei und volle Auswertung</button>`}</div>
     <div class="sec">Daten</div><div class="menu">
       <button class="mi" data-act="export">${I.down} Daten sichern</button>
       <button class="mi" data-act="import">${I.up2} Sicherung wiederherstellen</button></div>
@@ -1670,6 +1825,7 @@ if (appPlug) appPlug.addListener('backButton', () => {
 if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost') && !Cap) {
   window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
 }
+applyAds(); initBilling();
 render();
 </script>
 </body>

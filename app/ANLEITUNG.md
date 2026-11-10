@@ -58,4 +58,28 @@ Die Quellbilder liegen in `assets/`. Nach einer Änderung `npm run assets` ausf�
 ## Vor der Store-Veröffentlichung klären
 - **Name:** Im App Store gibt es bereits eine App namens „WizardBlock“ (0,99 USD, anderer Entwickler). „Wizard Block“ scheidet deshalb als Store-Name aus. Andere Zähl-Apps weisen außerdem darauf hin, dass „Wizard“ eine eingetragene Marke von Wizard Cards International ist. Empfehlung: eigener Name ohne „Wizard“ (zum Beispiel „Stichblock“ oder „Trickbook“), im Untertitel „Punkteblock für Wizard“ und in der Beschreibung der Hinweis „inoffizielle Fan-App“. Vor dem Einreichen den Wunschnamen bei DPMA und EUIPO sowie in beiden Stores suchen.
 - **Datenschutzerklärung:** Beide Stores verlangen eine. Sie liegt fertig als `datenschutz.html` vor und ist unter dem Pages-Link erreichbar. Vor der Veröffentlichung musst du oben nur noch Name, Anschrift und E-Mail eintragen. Die App sammelt keine Daten und speichert nur lokal auf dem Gerät. Das muss auch so in den Datenschutzangaben stehen.
-- **Werbung und In-App-Kauf** wie bei der Catan App sind noch nicht eingebaut.
+
+
+## Werbung und Premium-Abo
+
+In der App ist alles vorbereitet: Werbefläche unten, Premium-Fenster, gesperrte Auswertung und die Anbindung an AdMob (Anzeigen) und RevenueCat (Abo). Die Web-Testversion zeigt nur einen Platzhalter und einen Testzugang. Echte Anzeigen und Käufe laufen erst im Store-Build und sind hier **nicht auf einem Gerät getestet**.
+
+Alle Kennungen stehen in `www/index.html` im Block `MONETIZE`.
+
+### Anzeigen (AdMob)
+1. Konto auf admob.google.com anlegen, je eine App für iOS und Android erstellen und je einen Banner-Anzeigenblock anlegen.
+2. Die **App-IDs** eintragen: Android in `android/app/src/main/AndroidManifest.xml` (`APPLICATION_ID`), iOS in `ios/App/App/Info.plist` (`GADApplicationIdentifier`). Dort stehen bisher Googles Beispiel-IDs.
+3. Die **Banner-IDs** in `MONETIZE.adIOS` und `MONETIZE.adAndroid` eintragen und `adTesting` auf `false` setzen. Mit den eigenen IDs niemals selbst auf Anzeigen tippen.
+4. In AdMob unter „Datenschutz und Mitteilungen“ die Einwilligungsabfrage für Europa (DSGVO) aktivieren. Die App ruft sie beim Start ab.
+5. iOS: Für `Info.plist` verlangt Google zusätzlich die Liste `SKAdNetworkItems` (steht in der AdMob-Doku).
+
+### Abo (RevenueCat)
+1. In App Store Connect und in der Play Console je ein **automatisch verlängerndes Jahresabo** für 0,99 € anlegen.
+2. Kostenloses Konto bei revenuecat.com: beide Apps verbinden, die Abos importieren, eine Berechtigung mit dem Namen `premium` anlegen und ein Angebot mit dem Jahrespaket als „current“ setzen.
+3. Die öffentlichen SDK-Schlüssel in `MONETIZE.rcKeyIOS` und `MONETIZE.rcKeyAndroid` eintragen.
+4. Danach `npx cap sync` und mit Sandbox-Konto (iOS) beziehungsweise Lizenztester (Android) einen Testkauf machen.
+
+### Vor der Einreichung
+- Die Datenschutzerklärung um Abschnitte zu AdMob und RevenueCat ergänzen. Der jetzige Text gilt nur für die Web-Testversion ohne Werbung.
+- In beiden Stores die Datenschutzangaben ausfüllen (Werbe-ID, Kaufdaten).
+- Apple verlangt bei Abos im Kauf-Fenster Preis, Laufzeit, Hinweis zur Verlängerung, „Käufe wiederherstellen“ und Links zu Datenschutz und Nutzungsbedingungen. Bis auf die Nutzungsbedingungen ist das eingebaut.

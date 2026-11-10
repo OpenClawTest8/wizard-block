@@ -10,14 +10,16 @@
     "assets": "capacitor-assets generate --android --ios --iconBackgroundColor '#17191E' --iconBackgroundColorDark '#17191E' --splashBackgroundColor '#17191E' --splashBackgroundColorDark '#17191E'"
   },
   "dependencies": {
+    "@capacitor-community/admob": "^8.3.0",
     "@capacitor/android": "^8.0.0",
     "@capacitor/app": "^8.0.0",
     "@capacitor/core": "^8.0.0",
+    "@capacitor/filesystem": "^8.0.0",
     "@capacitor/haptics": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
+    "@capacitor/share": "^8.0.0",
     "@capacitor/status-bar": "^8.0.0",
-    "@capacitor/filesystem": "^8.0.0",
-    "@capacitor/share": "^8.0.0"
+    "@revenuecat/purchases-capacitor": "^14.1.0"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
