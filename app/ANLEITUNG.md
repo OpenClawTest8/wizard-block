@@ -56,6 +56,6 @@ Neue `index.html` nach `www/` kopieren und `npx cap sync` ausführen. Danach wie
 Die Quellbilder liegen in `assets/`. Nach einer Änderung `npm run assets` ausführen.
 
 ## Vor der Store-Veröffentlichung klären
-- **Name:** „Wizard“ ist der Produktname des Kartenspiels von AMIGO und U.S. Games Systems. Prüfe vor dem Einreichen, ob der Name markenrechtlich geschützt ist (DPMA, EUIPO). Ein eigener Name ist sicherer, zum Beispiel „Stichblock“ oder „Trickbook“, mit „für Wizard“ nur in der Beschreibung. Die Stores lehnen Apps mit fremden Marken im Namen ab.
-- **Datenschutzerklärung:** Beide Stores verlangen eine. Die App sammelt keine Daten und speichert nur lokal auf dem Gerät. Das muss auch so in den Datenschutzangaben stehen.
+- **Name:** Im App Store gibt es bereits eine App namens „WizardBlock“ (0,99 USD, anderer Entwickler). „Wizard Block“ scheidet deshalb als Store-Name aus. Andere Zähl-Apps weisen außerdem darauf hin, dass „Wizard“ eine eingetragene Marke von Wizard Cards International ist. Empfehlung: eigener Name ohne „Wizard“ (zum Beispiel „Stichblock“ oder „Trickbook“), im Untertitel „Punkteblock für Wizard“ und in der Beschreibung der Hinweis „inoffizielle Fan-App“. Vor dem Einreichen den Wunschnamen bei DPMA und EUIPO sowie in beiden Stores suchen.
+- **Datenschutzerklärung:** Beide Stores verlangen eine. Sie liegt fertig als `datenschutz.html` vor und ist unter dem Pages-Link erreichbar. Vor der Veröffentlichung musst du oben nur noch Name, Anschrift und E-Mail eintragen. Die App sammelt keine Daten und speichert nur lokal auf dem Gerät. Das muss auch so in den Datenschutzangaben stehen.
 - **Werbung und In-App-Kauf** wie bei der Catan App sind noch nicht eingebaut.

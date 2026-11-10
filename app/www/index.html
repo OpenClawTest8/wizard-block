@@ -394,7 +394,48 @@ button:active{transform:scale(.97)}
 .newcard .ico svg{width:30px;height:30px}
 .newcard b{display:block;font-size:19px;font-weight:800;letter-spacing:-.3px}
 .newcard small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+.mageinfo{display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:14px;padding:10px 14px;margin-top:10px}
+.mageinfo span{flex:1;font-size:12.5px;color:var(--muted);font-weight:600;line-height:1.35}
+.mageinfo b{font-size:24px;font-weight:800}
+.lst .it .itm{display:flex;align-items:center;gap:12px;flex:1;min-width:0;text-align:left}
+.lst .it .itm .t,.lst .it .itm .s{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lst .it .itm>div{min-width:0}
+.ihint{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:12px 12px 12px 14px;margin-top:14px}
+.ihint .ii{width:38px;height:38px;border-radius:12px;background:var(--accent-soft);color:var(--acc-fg);display:grid;place-items:center;flex:none}
+.ihint .ii svg{width:20px;height:20px}
+.ihint .tx{flex:1;font-size:13px;line-height:1.4;color:var(--ink2)}
+.ihint .tx b{display:block;color:var(--ink);font-size:14.5px}
+.toast{position:fixed;left:50%;bottom:calc(var(--safe-b) + 96px);transform:translateX(-50%);z-index:80;background:var(--ink);color:var(--bg);font-weight:650;font-size:14px;padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:toast 2.6s var(--e-out) forwards;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,16px)}10%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,8px)}}
+.fb textarea{width:100%;min-height:120px;border:0;border-radius:var(--r-md);background:var(--card);color:var(--ink);font:inherit;font-size:16px;padding:14px;box-shadow:var(--shadow);resize:none;outline:none;-webkit-user-select:text;user-select:text}
+.vers{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}
+.vers a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Feinschliff */
+:root{--hl:transparent}
+:root[data-theme="dark"]{--hl:rgba(255,255,255,.055)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(110% 55% at 50% -12%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 70%)}
+.card,.pl,.hero,.lcard,.exw,.sbar,.tblw,.opt,.ihint,.ibtn,.pill,.seg,.chip{box-shadow:var(--shadow),inset 0 1px 0 var(--hl)}
+.btn:not(.light){background:linear-gradient(180deg,color-mix(in srgb,var(--btn-bg) 86%,#fff),var(--btn-bg));box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 8px 20px color-mix(in srgb,var(--btn-bg) 26%,transparent)}
+.btn.light{box-shadow:var(--shadow),inset 0 1px 0 var(--hl)}
+.btn[disabled]{opacity:1;background:var(--soft);color:var(--muted);box-shadow:none}
+.full .btn{background:#F2EEE8;color:#17191E;box-shadow:none}
+.nav{background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--line)}
+.av{box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 -8px 12px rgba(0,0,0,.14);text-shadow:0 1px 1px rgba(0,0,0,.18);letter-spacing:-.3px}
+.av.two{font-size:.82em}
+.stp{overflow:visible}
+.stp button{position:relative}
+.stp button::after{content:"";position:absolute;inset:-7px -3px}
+@keyframes bumpUp{0%{transform:translateY(35%) scale(.9);opacity:0;color:var(--accent)}60%{color:var(--accent)}}
+@keyframes bumpDown{0%{transform:translateY(-35%) scale(.9);opacity:0;color:var(--accent)}60%{color:var(--accent)}}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sticky{background:linear-gradient(to top,var(--bg) 84%,var(--fade0));padding-top:26px}
+.h1{background:linear-gradient(180deg,var(--ink),color-mix(in srgb,var(--ink) 72%,var(--accent)));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sbar .n,.lsc b,.kpis b,.rtop em,.stp .val,td .tot,tfoot td{font-variant-numeric:tabular-nums}
+.phase div{border-width:1px}
+.hint{font-size:13px}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:none;opacity:1}}
@@ -420,7 +461,7 @@ const TRUMPS = {
   none:   { n: 'Kein Trumpf', c: '#B3AC9D' }
 };
 const MAXIMUS_TRUMPS = ['blue', 'red', 'green', 'yellow', 'none'];
-const COLORS = ['#3F6FB6', '#B8443F', '#3E8F68', '#C9973A', '#7D5BA6', '#2F8C8C', '#B26B3C', '#B5577A', '#5A6788', '#7F8F3A'];
+const COLORS = ['#3F6FB6', '#B8443F', '#3E8F68', '#D6B32E', '#7D5BA6', '#2F8C8C', '#B26B3C', '#B5577A', '#5A6788', '#7F8F3A'];
 const OLD_COLORS = ['#F0874A', '#6E9BD1', '#6FAA84', '#B07CC6', '#E2B33C', '#E07A8B', '#4FB0AC', '#A47E5C', '#6B7A8F', '#94B84A'];
 
 const nP = g => g.players.length;
@@ -488,14 +529,12 @@ function roundScore(g, r, i) {
   if (!rd || !rd.done) return null;
   if (g.edition === 'extreme') {
     const e = rd.ex;
-    let p = 3 * e.b[i];
     if (e.mage === i) {
+      // Offizielle Regel: Der Schwarzmagier erhält nie Siegel, auch keine schwarzen.
       const blackOthers = e.b.reduce((s, v, k) => s + (k === i ? 0 : v), 0);
-      p += Math.max(0, extremeBase(g, r) - blackOthers);
-    } else {
-      p += 2 * e.c[i] + 4 * e.w[i];
+      return Math.max(0, extremeBase(g, r) - blackOthers);
     }
-    return p;
+    return 2 * e.c[i] + 3 * e.b[i] + 4 * e.w[i];
   }
   const t = rd.tricks[i];
   if (g.edition === 'junior') {
@@ -568,6 +607,12 @@ function applyTheme() {
 }
 applyTheme();
 if (!store.v2) { store.setup.plusMinus = true; store.v2 = true; }
+if (!store.v4) {
+  const fixG = ps => ps && ps.forEach(pl => { if (pl.color === '#C9973A') pl.color = '#D6B32E'; });
+  fixG(store.setup.players); if (store.game) fixG(store.game.players); (store.history || []).forEach(h => fixG(h.players)); (store.paused || []).forEach(h => fixG(h.players));
+  store.v4 = true;
+}
+if (!store.paused) store.paused = [];
 if (!store.v3) {
   const mapC = c => { const k = OLD_COLORS.indexOf(c); return k >= 0 ? COLORS[k] : c; };
   const fix = ps => ps && ps.forEach(pl => { pl.color = mapC(pl.color); });
@@ -590,7 +635,12 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;'
 const ini = n => (n || '?').trim().slice(0, 1).toUpperCase();
 const fmt = n => n > 0 ? '+' + n : n < 0 ? '−' + Math.abs(n) : '0';
 const num = n => n < 0 ? '−' + Math.abs(n) : String(n);
-const av = (p, cls = '') => `<div class="av ${cls}" style="background:${p.color}">${esc(ini(p.name))}</div>`;
+const av = (p, cls = '') => `<div class="av ${cls} ${p.tag && p.tag.length > 1 ? 'two' : ''}" style="background:${p.color}">${esc(p.tag || ini(p.name))}</div>`;
+function tagPlayers(ps) {
+  const cnt = {}; ps.forEach(p => { const k = ini(p.name); cnt[k] = (cnt[k] || 0) + 1; });
+  ps.forEach(p => { const n = (p.name || '').trim(); const m = n.match(/(\d+)\s*$/);
+    p.tag = cnt[ini(n)] > 1 && n.length > 1 ? (m ? ini(n) + m[1].slice(-1) : ini(n) + n.slice(1, 2).toLowerCase()) : ini(n); });
+}
 const plural = (n, a, b) => n + ' ' + (n === 1 ? a : b);
 const I = {
   back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
@@ -610,6 +660,12 @@ const I = {
   flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 21V4h11l-2 4 2 4H5"/></svg>',
   trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M9 7V4h6v3M6.5 7l1 13h9l1-13"/></svg>',
   bars: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="13" width="4" height="7.5" rx="1.6"/><rect x="10" y="8" width="4" height="12.5" rx="1.6"/><rect x="16.5" y="3.5" width="4" height="17" rx="1.6"/></svg>',
+  gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>',
+  msg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1121 12z"/></svg>',
+  down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
+  up2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7 9l5-5 5 5M5 20h14"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>',
+  lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>',
   moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>',
   sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>',
   home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9H4z"/></svg>'
@@ -623,7 +679,17 @@ function gauge(total, doneCount, cur, big, top, bottom) {
   const arcLen = 2 * Math.PI * R * sweep / 360 / total;
   const w = Math.max(7, Math.min(total <= 6 ? 50 : 30, arcLen * (total <= 6 ? 0.62 : 0.74))), h = total > 14 ? 40 : 46;
   let s = '';
+  const arcs = total <= 8, sw = 20, gapDeg = (sw + 9) / R * 180 / Math.PI;
   for (let i = 0; i < total; i++) {
+    if (arcs) {
+      const a1 = (start + i * step + gapDeg / 2) * Math.PI / 180, a2 = (start + (i + 1) * step - gapDeg / 2) * Math.PI / 180;
+      const P = t => (cx + R * Math.sin(t)).toFixed(1) + ' ' + (cy - R * Math.cos(t)).toFixed(1);
+      let col = 'var(--g-future)';
+      if (i < doneCount) col = 'var(--g-done1)'; else if (i === cur) col = 'var(--g-cur)';
+      const cls = i === cur && i >= doneCount ? 'cur' : '';
+      s += `<path class="sg ${cls}" d="M${P(a1)} A${R} ${R} 0 0 1 ${P(a2)}" fill="none" stroke-width="${sw}" stroke-linecap="round" style="stroke:${col}"/>`;
+      continue;
+    }
     const a = start + (i + 0.5) * step, rad = a * Math.PI / 180;
     const x = cx + R * Math.sin(rad), y = cy - R * Math.cos(rad);
     let fill = 'var(--g-future)';
@@ -674,7 +740,7 @@ function render() {
 
 function homeHTML() {
   const g = store.game;
-  let h = `<div class="top"><button class="ibtn" data-act="theme" aria-label="Design wechseln">${store.theme === 'dark' ? I.sun : I.moon}</button><div class="title">Block der Wahrheit</div>
+  let h = `<div class="top"><button class="ibtn" data-act="settings" aria-label="Einstellungen">${I.gear}</button><div class="title">Block der Wahrheit</div>
     <button class="ibtn" data-act="rules" aria-label="Regeln">${I.book}</button></div>
     <div class="h1">Wizard</div><p class="lead">Punkte zählen ohne Block und Stift.</p>`;
   if (g) {
@@ -684,7 +750,8 @@ function homeHTML() {
       ${gauge(totalRounds(g), done, g.current, String(g.current + 1), EDITIONS[g.edition].name, done ? lead.name + ' führt' : 'Noch keine Wertung')}
       <div class="mini">${g.players.map(p => `<span class="pill"><span class="dot" style="background:${p.color}"></span>${esc(p.name)}</span>`).join('')}</div>
       <div style="margin-top:16px"><button class="btn" data-act="resume">Weiterspielen</button></div></div>
-      <button class="btn light" data-act="newgame">Neues Spiel</button>`;
+      <button class="btn light" data-act="newgame">Neues Spiel</button>
+      ${g.rounds.some(x => x.done) || g.rounds[0].bids.some(b => b) ? '<p class="hint" style="margin-top:8px">Das laufende Spiel wird dabei pausiert, nicht gelöscht.</p>' : ''}`;
   } else {
     const hs = store.history, wins = {};
     hs.forEach(hg => { const w = hg.players[ranking(hg)[0].i].name; wins[w] = (wins[w] || 0) + 1; });
@@ -693,6 +760,15 @@ function homeHTML() {
       ${hs.length ? `<div class="kpis" style="margin:0 0 16px"><div><b>${hs.length}</b><small>Partien</small></div><div><b>${hs.reduce((a, hg) => a + hg.rounds.filter(x => x.done).length, 0)}</b><small>Runden</small></div><div><b style="font-size:15px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px">${esc(top[0])}</b><small>Meiste Siege</small></div></div>` : ''}
       <button class="btn" data-act="newgame">Neues Spiel starten</button></div>`;
   }
+  if (store.paused.length) {
+    h += `<div class="sec">Unterbrochen</div><div class="card lst" style="padding:4px 14px">` + store.paused.map((pg, k) => {
+      const rk = ranking(pg), lead = pg.players[rk[0].i], done = pg.rounds.filter(x => x.done).length;
+      return `<div class="it"><button class="itm" data-act="resumepaused" data-k="${k}">${av(lead, 'sm')}
+        <div><div class="t">Runde ${pg.current + 1} von ${totalRounds(pg)}</div><div class="s">${EDITIONS[pg.edition].name} · ${pg.players.map(p => esc(p.name)).join(', ')}</div></div></button>
+        <button class="mbtn" data-act="delpaused" data-k="${k}" aria-label="Löschen">${I.x}</button></div>`;
+    }).join('') + `</div>`;
+  }
+  h += installHintHTML();
   h += `<div class="sec">Letzte Spiele ${store.history.length ? '<a data-act="clearhist">Leeren</a>' : ''}</div>`;
   if (!store.history.length) h += `<div class="card"><div class="empty">Abgeschlossene Spiele erscheinen hier.</div></div>`;
   else {
@@ -719,13 +795,13 @@ function setupHTML() {
 
   h += `<div class="sec">Mitspieler <span class="secm">${n} von ${ed.min} bis ${ed.max}</span></div><div class="card" style="padding:6px 14px">` +
     s.players.map((p, i) => `<div class="prow">${av(p)}
-      <input data-name="${i}" value="${esc(p.name)}" placeholder="Spieler ${i + 1}" maxlength="16" autocomplete="off">
+      <input data-name="${i}" value="${esc(p.name)}" placeholder="Spieler ${i + 1}" maxlength="16" autocomplete="off" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="done">
       ${i > 0 ? `<button class="mbtn" data-act="pup" data-i="${i}" aria-label="Nach oben">${I.up}</button>` : ''}
       ${n > ed.min ? `<button class="mbtn" data-act="pdel" data-i="${i}" aria-label="Entfernen">${I.x}</button>` : ''}</div>`).join('') +
     (n < ed.max ? `<button class="add" data-act="padd">${I.plus.replace('<svg', '<svg width="18" height="18"')} Spieler hinzufügen</button>` : '') + `</div>`;
   const rec = recentNames();
   if (rec.length) h += `<div class="chips" style="margin-top:10px">${rec.map(nm => `<button class="chip" data-act="recent" data-v="${esc(nm)}">${I.plus.replace('<svg', '<svg width="14" height="14"')}${esc(nm)}</button>`).join('')}</div>`;
-  if (n > 6 && isClassicLike(s)) h += `<p class="hint" style="text-align:left;margin:8px 6px 0">Offiziell ist Wizard für 3 bis 6 Spieler. Ab 7 Spielern gilt die Hausregel: Runden gleich 60 geteilt durch Spielerzahl (${Math.floor(60 / n)} Runden).</p>`;
+  if (n > 6 && isClassicLike(s)) h += `<p class="hint" style="text-align:left;margin:8px 6px 0">Wizard ist offiziell für 3 bis 6 Spieler ausgelegt. Gespielt wird wie im Original, bis alle 60 Karten verteilt sind: ${Math.floor(60 / n)} Runden.</p>`;
 
   h += `<div class="sec">Wer gibt zuerst?</div><div class="chips">` +
     s.players.map((p, i) => `<button class="chip ${s.firstDealer === i ? 'on' : ''}" data-act="dealer" data-i="${i}">${av(p, 'xs')}${esc(p.name || 'Spieler ' + (i + 1))}</button>`).join('') + `</div>`;
@@ -880,9 +956,9 @@ function extremeRoundHTML(g, r, rd, ctx) {
     h += `<div class="exw"><div class="hd">${av(p)}<div class="nm" style="flex:1;min-width:0"><b style="font-size:16px">${esc(p.name)}</b>
       <div style="font-size:12.5px;color:var(--muted);margin-top:2px">${num(tot[i])} Strafpunkte bisher</div></div>
       <button class="mage ${mage ? 'on' : ''}" data-act="mage" data-ctx="${ctx}" data-i="${i}">Schwarzmagier</button></div>
-      <div class="ex">${mage ? '' : `<div class="c"><small>Farbig ×2</small>${stepper(ctx, r, i, 'c', e.c[i], 1)}</div>`}
-      <div class="c" ${mage ? 'style="grid-column:1/3"' : ''}><small>Schwarz ×3</small>${stepper(ctx, r, i, 'b', e.b[i], 1)}</div>
-      ${mage ? `<div class="c" style="display:flex;flex-direction:column;justify-content:center"><small>Strafe</small><b style="font-size:20px">${pen}</b></div>` : `<div class="c"><small>Weiß ×4</small>${stepper(ctx, r, i, 'w', e.w[i], 1)}</div>`}</div>
+      ${mage ? `<div class="mageinfo"><span>Erhält keine Siegel. ${extremeBase(g, r)} Strafpunkte minus 1 je schwarzem Siegel der anderen.</span><b>${pen}</b></div>` : `<div class="ex"><div class="c"><small>Farbig ×2</small>${stepper(ctx, r, i, 'c', e.c[i], 1)}</div>
+      <div class="c"><small>Schwarz ×3</small>${stepper(ctx, r, i, 'b', e.b[i], 1)}</div>
+      <div class="c"><small>Weiß ×4</small>${stepper(ctx, r, i, 'w', e.w[i], 1)}</div></div>`}
       ${mage ? '' : `<div style="display:flex;justify-content:flex-end;margin-top:8px;font-size:13px;color:var(--muted);font-weight:600">Diese Runde: <b style="color:var(--ink);margin-left:6px">${pen}</b></div>`}</div>`;
   });
   if (ctx === 'live') {
@@ -1152,6 +1228,7 @@ function renderLayer() {
     const doneCnt = g.rounds.filter(x => x.done).length;
     h = sheet(`<h3>Spiel</h3><p class="s">${EDITIONS[g.edition].name} · ${nP(g)} Spieler · Runde ${g.current + 1} von ${totalRounds(g)}</p><div class="menu">
       <button class="mi" data-act="rules">${I.book} Regeln und Wertung</button>
+      <button class="mi" data-act="feedback">${I.msg} Feedback senden</button>
       <button class="mi" data-act="theme">${store.theme === 'dark' ? I.sun + ' Helles Design' : I.moon + ' Dunkles Design'}</button>
       ${doneCnt ? `<button class="mi" data-act="editround" data-r="${lastDoneIndex(g)}">${I.edit} Letzte gewertete Runde bearbeiten</button>` : ''}
       ${doneCnt ? `<button class="mi" data-act="finishnow">${I.flag} Jetzt beenden und werten</button>` : ''}
@@ -1166,6 +1243,18 @@ function renderLayer() {
       <button class="chip ${!rd.trump ? 'on' : ''}" data-act="settrump" data-v="">Offen lassen</button></div>`);
   } else if (s.type === 'edit') {
     h = sheet(editSheetHTML(g, s), true);
+  } else if (s.type === 'settings') {
+    h = sheet(settingsHTML(), true);
+  } else if (s.type === 'feedback') {
+    const gg = store.game;
+    h = sheet(`<h3>Feedback</h3><p class="s">Was ist dir aufgefallen? Die Nachricht geht über WhatsApp, Mail oder einen anderen Weg deiner Wahl an den Entwickler.</p>
+      <div class="fb"><textarea id="fbtext" placeholder="Fehler, Wunsch oder Idee …" maxlength="2000">${esc(s.text || '')}</textarea></div>
+      ${gg ? `<div class="opt" style="margin-top:12px"><div class="tg"><div class="tx"><b>Spielstand anhängen</b><span>Hilft, einen Fehler genau nachzustellen. Enthält Namen und Punkte dieses Spiels.</span></div><button class="sw ${s.withGame ? 'on' : ''}" data-act="fbgame"></button></div></div>` : ''}
+      <div style="margin-top:14px;display:grid;gap:10px"><button class="btn" data-act="fbsend">${I.share.replace('<svg', '<svg width="20" height="20"')} Senden</button><button class="btn light" data-act="close">Abbrechen</button></div>`, true);
+  } else if (s.type === 'fbcopy') {
+    h = sheet(`<h3>Text kopieren</h3><p class="s">Teilen ist hier nicht möglich. Markiere den Text und schick ihn per Nachricht.</p>
+      <div class="fb"><textarea readonly style="min-height:220px;font-size:13px">${esc(s.text)}</textarea></div>
+      <div style="margin-top:14px"><button class="btn light" data-act="close">Schließen</button></div>`, true);
   } else if (s.type === 'player') {
     h = sheet(playerSheetHTML(ui.view || store.game, s.i), true);
   } else if (s.type === 'rules') {
@@ -1217,7 +1306,7 @@ function rulesHTML() {
   const blocks = {
     classic: `<h4>Wizard (Klassik, Deluxe, Das Schwarze Auge)</h4><ul>
       <li>Richtige Vorhersage: 20 Punkte plus 10 pro Stich.</li><li>Daneben: 10 Minuspunkte pro Stich Abweichung.</li>
-      <li>Runden: 20 bei 3, 15 bei 4, 12 bei 5 und 10 bei 6 Spielern.</li><li>Letzte Runde ohne Trumpf. Die Sonderkarte Das Schwarze Auge ändert nichts an der Wertung.</li></ul>
+      <li>Runden: Es wird verteilt, bis in der letzten Runde alle 60 Karten im Spiel sind. Das sind 20 Runden bei 3, 15 bei 4, 12 bei 5 und 10 bei 6 Spielern. Bei mehr Spielern gilt dasselbe Prinzip.</li><li>Letzte Runde ohne Trumpf. Die Sonderkarte Das Schwarze Auge ändert nichts an der Wertung.</li></ul>
       <h4>Varianten</h4><ul><li><b>Plus/Minus Eins:</b> Summe der Vorhersagen darf nicht der Stichzahl entsprechen.</li>
       <li><b>Verdeckter Tipp:</b> Alle tippen geheim und decken gleichzeitig auf.</li><li><b>Geheime Vorhersage:</b> Aufgedeckt wird erst nach der Stichrunde.</li>
       <li><b>Hellsehen:</b> Runde 1 mit der Karte an der Stirn.</li><li><b>Einfarbig:</b> 3 oder 4 Spieler, 12 Runden mit 4 bis 15 Karten, kein Trumpf.</li>
@@ -1231,7 +1320,7 @@ function rulesHTML() {
       <li>Daneben: 0 Punkte. Punkte gehen nie verloren.</li><li>Runden: 8 bei 3 oder 4, 7 bei 5 und 6 bei 6 Spielern.</li></ul>`,
     extreme: `<h4>Wizard Extreme</h4><ul><li>Gewonnen hat, wer die wenigsten Strafpunkte hat.</li>
       <li>Übrige farbige Siegel: 2 Strafpunkte, schwarze Siegel: 3, weiße Siegel: 4.</li>
-      <li>Schwarzmagier: Grundwert 4 minus 1 pro schwarzem Siegel der anderen, mindestens 0.</li>
+      <li>Schwarzmagier: erhält keine Siegel, auch keine schwarzen. Grundwert 4 minus 1 pro schwarzem Siegel der anderen, mindestens 0.</li>
       <li>Höchstens 6 schwarze Siegel pro Runde.</li>
       <li>Runden: 6 bei 3, 4 bei 4 und 5 bei 5 Spielern. Langes Spiel: 8 bzw. 10 Runden, Schwarzmagier in der zweiten Hälfte mit Grundwert 5.</li>
       <li>Option bei 3 Spielern: Schwarzmagier Grundwert 5.</li></ul>`
@@ -1271,7 +1360,8 @@ function startGame(base) {
     players, firstDealer: Math.min(s.firstDealer, players.length - 1), rounds: [], current: 0
   };
   g.rounds.push(newRound(g, 0));
-  store.game = g; store.lastNames = players.map(p => p.name);
+  tagPlayers(players);
+  store.game = g; store.lastNames = players.map(p => p.name); persistStorage();
   ui.screen = 'game'; ui.tab = 'round'; ui.sheet = null; ui.view = null; ui.fx = ['enter'];
   save(); render(); window.scrollTo(0, 0);
 }
@@ -1294,8 +1384,25 @@ document.addEventListener('click', e => {
     case 'home': ui.screen = 'home'; break;
     case 'resume': ui.screen = 'game'; break;
     case 'newgame':
-      if (store.game) { ui.sheet = { type: 'confirm', title: 'Neues Spiel?', text: 'Das laufende Spiel wird verworfen.', yes: 'gosetup', yesLabel: 'Verwerfen und neu' }; renderLayer(); return; }
-      freshPlayers(); ui.screen = 'setup'; break;
+      if (store.game) { pauseCurrent(); }
+      freshPlayers(); ui.screen = 'setup'; ui.fx = ['enter']; break;
+    case 'resumepaused': {
+      const k = +d.k, pg = store.paused[k];
+      store.paused.splice(k, 1);
+      if (store.game) pauseCurrent();
+      store.game = pg; ui.screen = 'game'; ui.tab = 'round'; ui.fx = ['enter']; break;
+    }
+    case 'delpaused': ui.sheet = { type: 'confirm', title: 'Spiel löschen?', text: 'Das unterbrochene Spiel wird endgültig entfernt.', yes: 'dodelpaused', yesLabel: 'Löschen', k: +d.k }; renderLayer(); return;
+    case 'dodelpaused': store.paused.splice(ui.sheet.k, 1); ui.sheet = null; break;
+    case 'settings': ui.sheet = { type: 'settings' }; renderLayer(); return;
+    case 'settheme': store.theme = d.v; applyTheme(); break;
+    case 'feedback': ui.sheet = { type: 'feedback', withGame: true }; renderLayer(); return;
+    case 'fbgame': ui.sheet.withGame = !ui.sheet.withGame; { const ta = document.getElementById('fbtext'); ui.sheet.text = ta ? ta.value : ''; } renderLayer(); return;
+    case 'fbsend': sendFeedback(); return;
+    case 'export': exportData(); return;
+    case 'import': { const inp = document.getElementById('importfile'); if (inp) { inp.value = ''; inp.click(); } return; }
+    case 'install': doInstall(); return;
+    case 'hintoff': store.hintOff = true; break;
     case 'gosetup': store.game = null; ui.sheet = null; freshPlayers(); ui.screen = 'setup'; break;
     case 'recent': {
       const free = s.players.findIndex(p => !(p.name || '').trim());
@@ -1333,7 +1440,7 @@ document.addEventListener('click', e => {
     case 'bomb': { const rd = refRound(d.ctx, g.current); if (d.ctx === 'edit') ui.sheet.draft.bomb = !ui.sheet.draft.bomb; else { rd.bomb = !rd.bomb; save(); } break; }
     case 'cloudp': { const rd = d.ctx === 'edit' ? ui.sheet.draft : g.rounds[g.current]; rd.cloud.p = +d.i; if (d.ctx === 'live') save(); break; }
     case 'cloudd': { const rd = d.ctx === 'edit' ? ui.sheet.draft : g.rounds[g.current]; rd.cloud.d = +d.v; if (d.ctx === 'live') save(); break; }
-    case 'mage': { const rd = d.ctx === 'edit' ? ui.sheet.draft : g.rounds[g.current]; const i = +d.i; rd.ex.mage = rd.ex.mage === i ? -1 : i; if (rd.ex.mage === i) { rd.ex.c[i] = 0; rd.ex.w[i] = 0; } if (d.ctx === 'live') save(); break; }
+    case 'mage': { const rd = d.ctx === 'edit' ? ui.sheet.draft : g.rounds[g.current]; const i = +d.i; rd.ex.mage = rd.ex.mage === i ? -1 : i; if (rd.ex.mage === i) { rd.ex.c[i] = 0; rd.ex.w[i] = 0; rd.ex.b[i] = 0; } if (d.ctx === 'live') save(); break; }
     case 'score': {
       const r = g.current, rd = g.rounds[r];
       if (validateTricks(g, r, rd)) return;
@@ -1388,6 +1495,138 @@ document.addEventListener('input', e => {
     save();
   }
 });
+/* ===== Absicherung: Pausieren, Einstellungen, Feedback, Sicherung, Installation ===== */
+const APP_VERSION = '1.1.0';
+function pauseCurrent() {
+  if (!store.game) return;
+  store.paused.unshift(store.game);
+  store.paused = store.paused.slice(0, 10);
+  store.game = null;
+}
+function toast(msg) {
+  const old = document.querySelector('.toast'); if (old) old.remove();
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2700);
+}
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIOS = () => /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+let installPrompt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installPrompt = e; if (ui.screen === 'home' && !ui.sheet) render(); });
+window.addEventListener('appinstalled', () => { installPrompt = null; store.hintOff = true; save(); });
+function canHintInstall() {
+  const native = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform();
+  let framed = false; try { framed = window.self !== window.top; } catch (e) { framed = true; }
+  return !native && !framed && !isStandalone() && location.protocol === 'https:';
+}
+function installHintHTML() {
+  if (!canHintInstall() || store.hintOff || !(store.game || store.history.length || store.paused.length)) return '';
+  const body = installPrompt ? 'Dann läuft sie im Vollbild und offline, und deine Spiele bleiben sicher gespeichert.'
+    : isIOS() ? 'Unten auf Teilen tippen, dann „Zum Home-Bildschirm“. So bleiben deine Spiele dauerhaft gespeichert.'
+    : 'Im Browsermenü „App installieren“ wählen. So bleiben deine Spiele dauerhaft gespeichert.';
+  return `<div class="ihint"><span class="ii">${I.lock}</span><div class="tx"><b>Als App installieren</b>${body}</div>
+    ${installPrompt ? `<button class="btn small" data-act="install" style="height:38px;padding:0 14px;font-size:14px">Installieren</button>` : ''}
+    <button class="mbtn" data-act="hintoff" aria-label="Ausblenden">${I.x}</button></div>`;
+}
+async function doInstall() {
+  if (!installPrompt) { toast(isIOS() ? 'Teilen, dann „Zum Home-Bildschirm“' : 'Im Browsermenü „App installieren“ wählen'); return; }
+  installPrompt.prompt();
+  try { const r = await installPrompt.userChoice; if (r.outcome === 'accepted') { store.hintOff = true; save(); } } catch (e) {}
+  installPrompt = null; render();
+}
+function settingsHTML() {
+  return `<h3>Einstellungen</h3><p class="s">Wizard Block ${APP_VERSION}</p>
+    <div class="sec" style="margin-top:4px">Design</div>
+    <div class="seg"><button class="${store.theme === 'dark' ? 'on' : ''}" data-act="settheme" data-v="dark">Dunkel</button><button class="${store.theme === 'light' ? 'on' : ''}" data-act="settheme" data-v="light">Hell</button></div>
+    <div class="sec">Daten</div><div class="menu">
+      <button class="mi" data-act="export">${I.down} Daten sichern</button>
+      <button class="mi" data-act="import">${I.up2} Sicherung wiederherstellen</button></div>
+    <p class="hint" style="text-align:left;margin:0 4px 4px">Spiele werden nur auf diesem Gerät gespeichert. Eine Sicherung kannst du in Dateien, iCloud oder Google Drive ablegen und auf einem neuen Gerät wiederherstellen.</p>
+    <div class="sec">Hilfe</div><div class="menu">
+      <button class="mi" data-act="feedback">${I.msg} Feedback senden</button>
+      <button class="mi" data-act="rules">${I.book} Regeln und Wertung</button>
+      ${canHintInstall() ? `<button class="mi" data-act="install">${I.lock} Als App installieren</button>` : ''}</div>
+    <p class="vers">Inoffizielle Fan-App ohne Verbindung zu Spieleverlagen · <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></p>`;
+}
+function encodeGame(g) {
+  const json = JSON.stringify(g);
+  return 'WB1:' + btoa(unescape(encodeURIComponent(json)));
+}
+function deviceLine() {
+  const ua = navigator.userAgent;
+  const dev = /iPhone/.test(ua) ? 'iPhone' : /iPad/.test(ua) || isIOS() ? 'iPad' : /Android/.test(ua) ? 'Android' : /Mac/.test(ua) ? 'Mac' : /Windows/.test(ua) ? 'Windows' : 'Gerät';
+  const os = (ua.match(/OS (\d+[_.]\d+)/) || ua.match(/Android (\d+(\.\d+)?)/) || [])[1];
+  const native = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform();
+  return `Version ${APP_VERSION} · ${dev}${os ? ' ' + os.replace('_', '.') : ''} · ${native ? 'Store-App' : isStandalone() ? 'installiert' : 'Browser'} · ${screen.width}×${screen.height} · ${store.theme}`;
+}
+async function sendFeedback() {
+  const ta = document.getElementById('fbtext'), msg = ta ? ta.value.trim() : '';
+  const g = store.game;
+  let text = 'Feedback zu Wizard Block\n\n' + (msg || '(ohne Text)') + '\n\n' + deviceLine();
+  if (g) text += `\nSpiel: ${EDITIONS[g.edition].name}, Runde ${g.current + 1} von ${totalRounds(g)}, ${nP(g)} Spieler`;
+  if (g && ui.sheet.withGame) text += '\n\nDiagnosecode:\n' + encodeGame(g);
+  try {
+    if (navigator.share) { await navigator.share({ text }); ui.sheet = null; renderLayer(); toast('Danke für dein Feedback'); return; }
+  } catch (e) { if (e && e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(text); ui.sheet = null; renderLayer(); toast('Kopiert, jetzt in einer Nachricht einfügen'); return; } catch (e) {}
+  ui.sheet = { type: 'fbcopy', text }; renderLayer();
+}
+async function exportData() {
+  const data = { app: 'wizard-block', format: 1, exported: new Date().toISOString(), version: APP_VERSION,
+    history: store.history, game: store.game, paused: store.paused, setup: store.setup, lastNames: store.lastNames };
+  const name = 'wizard-block-sicherung-' + new Date().toISOString().slice(0, 10) + '.json';
+  const json = JSON.stringify(data);
+  const C = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform() ? window.Capacitor.Plugins : null;
+  try {
+    if (C && C.Filesystem && C.Share) {
+      const w = await C.Filesystem.writeFile({ path: name, data: json, directory: 'CACHE', encoding: 'utf8' });
+      await C.Share.share({ title: 'Wizard Block Sicherung', url: w.uri });
+      store.lastBackup = Date.now(); save(); toast('Sicherung erstellt'); return;
+    }
+    const file = new File([json], name, { type: 'application/json' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Wizard Block Sicherung' }); store.lastBackup = Date.now(); save(); toast('Sicherung erstellt'); return; }
+  } catch (e) { if (e && e.name === 'AbortError') return; }
+  try {
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' })); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    store.lastBackup = Date.now(); save(); toast('Sicherung gespeichert');
+  } catch (e) { toast('Sicherung hier nicht möglich'); }
+}
+function importData(text) {
+  let data;
+  try {
+    const t = text.trim();
+    if (t.startsWith('WB1:') || t.includes('\nWB1:')) {
+      const code = t.slice(t.indexOf('WB1:') + 4).split(/\s/)[0];
+      data = { app: 'wizard-block', game: JSON.parse(decodeURIComponent(escape(atob(code)))) };
+    } else data = JSON.parse(t);
+  } catch (e) { toast('Datei konnte nicht gelesen werden'); return; }
+  if (!data || data.app !== 'wizard-block') { toast('Keine Wizard-Block-Sicherung'); return; }
+  const key = gg => (gg.id || '') + ':' + (gg.created || '');
+  const known = new Set([...store.history, ...store.paused, ...(store.game ? [store.game] : [])].map(key));
+  let added = 0;
+  (data.history || []).forEach(hg => { if (!known.has(key(hg))) { store.history.push(hg); known.add(key(hg)); added++; } });
+  store.history.sort((a, b) => (b.finished || b.created || 0) - (a.finished || a.created || 0));
+  store.history = store.history.slice(0, 200);
+  [...(data.paused || []), ...(data.game ? [data.game] : [])].forEach(pg => {
+    if (!pg || known.has(key(pg))) return;
+    if (!store.game) store.game = pg; else store.paused.push(pg);
+    known.add(key(pg)); added++;
+  });
+  if ((!store.lastNames || !store.lastNames.length) && data.lastNames) store.lastNames = data.lastNames;
+  save(); ui.sheet = null; ui.screen = 'home'; ui.fx = ['enter']; render();
+  toast(added ? plural(added, 'Spiel', 'Spiele') + ' wiederhergestellt' : 'Alles war schon vorhanden');
+}
+(function () {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.id = 'importfile'; inp.accept = '.json,application/json,text/plain'; inp.hidden = true;
+  inp.addEventListener('change', () => { const f = inp.files && inp.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => importData(String(r.result)); r.readAsText(f); });
+  document.body.appendChild(inp);
+})();
+function persistStorage() {
+  if (store.persistAsked || !navigator.storage || !navigator.storage.persist) return;
+  store.persistAsked = true; save();
+  navigator.storage.persist().catch(() => {});
+}
+
 /* ===== App-Schicht: Native (Capacitor) und installierte Web-App ===== */
 const Cap = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform() ? window.Capacitor : null;
 const plug = n => Cap && Cap.Plugins ? Cap.Plugins[n] : null;
