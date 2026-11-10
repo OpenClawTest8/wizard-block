@@ -1,6 +1,6 @@
 // Wizard Block: Offline-Cache. Bei jeder neuen Version VERSION erhöhen.
-const VERSION = 'wizard-block-v5';
-const FILES = ['./', './index.html', './datenschutz.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
+const VERSION = 'wizard-block-v6';
+const FILES = ['./', './index.html', './datenschutz.html', './nutzungsbedingungen.html', './impressum.html', './support.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png',
   './icons/icon-maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png',
   './fonts/plus-jakarta-sans-latin-wght-normal.woff2', './fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2'];
 
@@ -16,7 +16,7 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
   if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).then(r => { const c = r.clone(); caches.open(VERSION).then(x => x.put('./index.html', './datenschutz.html', c)); return r; })
+    e.respondWith(fetch(req).then(r => { const c = r.clone(); caches.open(VERSION).then(x => x.put('./index.html', './datenschutz.html', './nutzungsbedingungen.html', './impressum.html', './support.html', c)); return r; })
       .catch(() => caches.match('./index.html')));
     return;
   }

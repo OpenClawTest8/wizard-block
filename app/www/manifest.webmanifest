@@ -1,7 +1,7 @@
 {
-  "name": "Wizard Block",
-  "short_name": "Wizard Block",
-  "description": "Punkteblock für das Kartenspiel Wizard mit allen Versionen und Varianten.",
+  "name": "Stichblock",
+  "short_name": "Stichblock",
+  "description": "Punkteblock für Wizard und andere Stichspiele, mit allen Versionen und Varianten.",
   "lang": "de",
   "id": "./",
   "start_url": "./",

@@ -11,8 +11,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-title" content="Wizard">
-<title>Wizard Block</title>
+<meta name="apple-mobile-web-app-title" content="Stichblock">
+<title>Stichblock</title>
 <style>
 @font-face{font-family:'Jakarta';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Jakarta';font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -244,9 +244,10 @@ tfoot td{border-top:2px solid var(--ink);font-weight:800;font-size:17px;padding:
 .pad button{height:56px;border-radius:18px;background:var(--card);font-size:21px;font-weight:700;box-shadow:var(--shadow)}
 .pad button.on{background:var(--btn-bg);color:var(--btn-fg)}
 .pad button[disabled]{opacity:.25;text-decoration:line-through}
-.menu button.mi{display:flex;align-items:center;gap:12px;width:100%;padding:15px 14px;border-radius:var(--r-md);background:var(--card);margin-bottom:8px;font-weight:600;font-size:15.5px;box-shadow:var(--shadow);text-align:left}
+.menu a.mi{text-decoration:none;color:inherit}
+.menu button.mi,.menu a.mi,.menu div.mi{display:flex;align-items:center;gap:12px;width:100%;padding:15px 14px;border-radius:var(--r-md);background:var(--card);margin-bottom:8px;font-weight:600;font-size:15.5px;box-shadow:var(--shadow);text-align:left}
 .menu button.mi.danger{color:var(--bad)}
-.menu button.mi svg{width:20px;height:20px;flex:none}
+.menu .mi svg{width:20px;height:20px;flex:none}
 .full{position:fixed;inset:0;z-index:60;background:var(--full-bg);color:#F2EEE8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;animation:fade .2s}
 .full .av{width:84px;height:84px;font-size:32px;margin-bottom:18px}
 .full h2{font-size:28px;margin:0 0 8px;letter-spacing:-.5px}
@@ -447,7 +448,7 @@ html.ads .sticky{padding-bottom:16px}
 .sh{padding-bottom:calc(var(--safe-b) + 20px + var(--ad))}
 .full{padding-bottom:calc(30px + var(--ad))}
 .toast{bottom:calc(var(--safe-b) + 96px + var(--ad))}
-#adbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;height:calc(60px + var(--safe-b));padding:0 14px var(--safe-b);background:var(--card);border-top:1px solid var(--line);align-items:center;justify-content:center}
+#adbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;height:calc(var(--ad) + var(--safe-b));padding:0 14px var(--safe-b);background:var(--card);border-top:1px solid var(--line);align-items:center;justify-content:center}
 html.ads #adbar{display:flex}
 #adbar .house{display:flex;align-items:center;gap:12px;width:100%;max-width:432px;text-align:left}
 #adbar .adtag{font-size:9.5px;font-weight:800;letter-spacing:.5px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:2px 5px;flex:none}
@@ -791,7 +792,7 @@ function homeHTML() {
   const g = store.game;
   let h = `<div class="top"><button class="ibtn" data-act="settings" aria-label="Einstellungen">${I.gear}</button><div class="title">Block der Wahrheit</div>
     <button class="ibtn" data-act="rules" aria-label="Regeln">${I.book}</button></div>
-    <div class="h1">Wizard</div><p class="lead">Punkte zählen ohne Block und Stift.</p>`;
+    <div class="h1">Stichblock</div><p class="lead">Der Punkteblock für Wizard und Co.</p>`;
   if (g) {
     const rk = ranking(g), lead = g.players[rk[0].i], done = g.rounds.filter(r => r.done).length;
     h += `<div class="hero"><div class="row"><div><div class="k">Laufendes Spiel</div>
@@ -1279,7 +1280,7 @@ function renderLayer() {
       <button class="mi" data-act="rules">${I.book} Regeln und Wertung</button>
       <button class="mi" data-act="feedback">${I.msg} Feedback senden</button>
       <button class="mi" data-act="theme">${store.theme === 'dark' ? I.sun + ' Helles Design' : I.moon + ' Dunkles Design'}</button>
-      ${doneCnt ? `<button class="mi" data-act="editround" data-r="${lastDoneIndex(g)}">${I.edit} Letzte gewertete Runde bearbeiten</button>` : ''}
+      ${doneCnt ? `<button class="mi" data-act="pickround">${I.edit} Runde korrigieren</button>` : ''}
       ${doneCnt ? `<button class="mi" data-act="finishnow">${I.flag} Jetzt beenden und werten</button>` : ''}
       <button class="mi danger" data-act="discard">${I.trash} Spiel verwerfen</button></div>`);
   } else if (s.type === 'confirm') {
@@ -1292,6 +1293,17 @@ function renderLayer() {
       <button class="chip ${!rd.trump ? 'on' : ''}" data-act="settrump" data-v="">Offen lassen</button></div>`);
   } else if (s.type === 'edit') {
     h = sheet(editSheetHTML(g, s), true);
+  } else if (s.type === 'pickround') {
+    const rows = g.rounds.map((rd, r) => ({ rd, r })).filter(x => x.rd.done).reverse();
+    h = sheet(`<h3>Runde korrigieren</h3><p class="s">Welche Runde willst du ändern? Alle folgenden Runden werden neu berechnet.</p>
+      <div class="card lst" style="padding:4px 14px">${rows.map(({ rd, r }) => {
+        const info = g.edition === 'extreme' ? g.players.map((p, i) => esc(p.name) + ' +' + roundScore(g, r, i)).join(' · ')
+          : g.players.map((p, i) => esc(p.name) + ' ' + effBid(g, rd, i) + '/' + rd.tricks[i]).join(' · ');
+        return `<button class="it" style="width:100%;text-align:left" data-act="editround" data-r="${r}"><span class="rpos" style="width:30px">${r + 1}</span>
+          <div style="min-width:0"><div class="t">Runde ${r + 1}${cardsIn(g, r) ? ' · ' + plural(cardsIn(g, r), 'Karte', 'Karten') : ''}</div><div class="s" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${info}</div></div>
+          <span class="r" style="color:var(--muted)">${I.edit.replace('<svg', '<svg width="18" height="18"')}</span></button>`;
+      }).join('')}</div>
+      <div style="margin-top:14px"><button class="btn light" data-act="close">Schließen</button></div>`, true);
   } else if (s.type === 'paywall') {
     h = sheet(paywallHTML(), true);
   } else if (s.type === 'settings') {
@@ -1344,11 +1356,12 @@ function editSheetHTML(g, s) {
     }).join('');
     if (g.edition === 'jubi' && (g.bomb || g.cloud)) h += specialsHTML(g, rd, 'edit');
   }
-  let err = null;
-  if (g.edition !== 'extreme') err = !allSet(rd.bids) ? 'Ansagen fehlen' : (g.plusMinus && g.bidMode === 'open' ? validateBids(g, r, rd) : null);
+  let err = null, warn = null;
+  if (g.edition !== 'extreme') { err = !allSet(rd.bids) ? 'Ansagen fehlen' : null; warn = g.plusMinus ? validateBids(g, r, rd) : null; }
   err = err || validateTricks(g, r, rd);
+  if (!err && warn) err = null;
   h += `<div style="margin-top:14px;display:grid;gap:8px"><button class="btn" data-act="saveedit" ${err ? 'disabled' : ''}>Speichern</button>
-    <p class="hint ${err ? 'bad' : ''}" style="margin:0">${err ? esc(err) : ''}</p><button class="btn light" data-act="close">Abbrechen</button></div>`;
+    <p class="hint ${err ? 'bad' : ''}" style="margin:0">${err ? esc(err) : warn ? 'Hinweis: Die Ansagen ergeben genau die Stichzahl.' : ''}</p><button class="btn light" data-act="close">Abbrechen</button></div>`;
   return h;
 }
 
@@ -1474,6 +1487,7 @@ document.addEventListener('click', e => {
     case 'stattab': ui.statTab = d.v; break;
     case 'player': ui.sheet = isPremium() ? { type: 'player', i: +d.i } : { type: 'paywall' }; renderLayer(); return;
     case 'paywall': ui.sheet = { type: 'paywall' }; renderLayer(); return;
+    case 'pickround': ui.sheet = { type: 'pickround' }; renderLayer(); return;
     case 'buy': buyPremium(); return;
     case 'restore': restorePremium(); return;
     case 'premtest': store.premiumTest = !store.premiumTest; save(); ui.sheet = null; ui.fx = ['stat']; applyAds(); render(); toast(store.premiumTest ? 'Premium zum Testen aktiv' : 'Premium-Test beendet'); return;
@@ -1564,7 +1578,12 @@ const MONETIZE = {
 const isNative = () => !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 const nativeOS = () => isNative() ? window.Capacitor.getPlatform() : 'web';
 const isPremium = () => !!(store.premium || store.premiumTest);
-let priceString = MONETIZE.priceFallback, rcPackage = null, rcReady = false, adShown = false;
+const WEB_BASE = 'https://openclawtest8.github.io/wizard-block/';
+const legal = page => (isNative() ? WEB_BASE : '') + page;
+const APPLE_EULA = 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
+const termsUrl = () => nativeOS() === 'ios' ? APPLE_EULA : legal('nutzungsbedingungen.html');
+const manageUrl = () => nativeOS() === 'android' ? 'https://play.google.com/store/account/subscriptions' : 'https://apps.apple.com/account/subscriptions';
+let priceString = MONETIZE.priceFallback, rcPackage = null, rcReady = false, adShown = false, adsInit = false;
 function locked(html, title, text) {
   if (isPremium()) return html;
   return `<div class="lockw"><div class="lockc" aria-hidden="true">${html}</div>
@@ -1584,11 +1603,11 @@ function paywallHTML() {
     <button class="btn" data-act="buy">Premium freischalten</button>
     <button class="linkbtn" data-act="restore">Käufe wiederherstellen</button>
     ${native ? '' : `<button class="linkbtn" data-act="premtest" style="margin-top:0;color:var(--accent)">Testversion: Premium kostenlos ansehen</button>`}
-    <p class="legal">Jahresabo für ${esc(priceString)}. Es verlängert sich automatisch um ein Jahr, wenn es nicht mindestens 24 Stunden vor Ablauf gekündigt wird. Kündigen kannst du jederzeit in den Einstellungen deines Store-Kontos. <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></p>`;
+    <p class="legal">Jahresabo für ${esc(priceString)}. Es verlängert sich automatisch um ein Jahr, wenn es nicht mindestens 24 Stunden vor Ablauf gekündigt wird. Kündigen kannst du jederzeit in den Einstellungen deines Store-Kontos.<br><a href="${termsUrl()}" target="_blank" rel="noopener">Nutzungsbedingungen</a> · <a href="${legal('datenschutz.html')}" target="_blank" rel="noopener">Datenschutz</a></p>`;
 }
 function renderAdbar() {
   const bar = document.getElementById('adbar'); if (!bar) return;
-  bar.innerHTML = adShown ? '' : `<button class="house" data-act="paywall"><span class="adtag">ANZEIGE</span><span class="adtx"><b>Hier steht später Werbung</b>Werbefrei für ${esc(priceString)} im Jahr</span><span class="adcta">Entfernen</span></button>`;
+  bar.innerHTML = adShown ? '' : `<button class="house" data-act="paywall"><span class="adtag">ANZEIGE</span><span class="adtx"><b>Stichblock Premium</b>Werbefrei und volle Auswertung</span><span class="adcta">Entfernen</span></button>`;
 }
 async function applyAds() {
   const want = !isPremium();
@@ -1598,11 +1617,16 @@ async function applyAds() {
   if (!A) return;
   try {
     if (want && !adShown) {
-      await A.initialize({ initializeForTesting: MONETIZE.adTesting });
-      try { const c = await A.requestConsentInfo(); if (c && c.isConsentFormAvailable && c.status === 'REQUIRED') await A.showConsentForm(); } catch (e) {}
+      if (!adsInit) {
+        adsInit = true;
+        await A.initialize({ initializeForTesting: MONETIZE.adTesting, maxAdContentRating: 'General', tagForChildDirectedTreatment: false, tagForUnderAgeOfConsent: false });
+        try { A.addListener('bannerAdSizeChanged', sz => { if (sz && sz.height) document.documentElement.style.setProperty('--ad', Math.round(sz.height) + 'px'); }); } catch (e) {}
+        try { const c = await A.requestConsentInfo(); if (c && c.isConsentFormAvailable && c.status === 'REQUIRED') await A.showConsentForm(); } catch (e) {}
+        if (nativeOS() === 'ios') { try { const t = await A.trackingAuthorizationStatus(); if (t && t.status === 'notDetermined') await A.requestTrackingAuthorization(); } catch (e) {} }
+      }
       await A.showBanner({ adId: nativeOS() === 'ios' ? MONETIZE.adIOS : MONETIZE.adAndroid, adSize: 'ADAPTIVE_BANNER', position: 'BOTTOM_CENTER', margin: 0, isTesting: MONETIZE.adTesting });
       adShown = true; renderAdbar();
-    } else if (!want && adShown) { await A.removeBanner(); adShown = false; }
+    } else if (!want && adShown) { await A.removeBanner(); adShown = false; document.documentElement.style.removeProperty('--ad'); }
   } catch (e) { adShown = false; renderAdbar(); }
 }
 function setPremium(v) {
@@ -1648,7 +1672,7 @@ async function restorePremium() {
 }
 
 /* ===== Absicherung: Pausieren, Einstellungen, Feedback, Sicherung, Installation ===== */
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.3.0';
 function pauseCurrent() {
   if (!store.game) return;
   store.paused.unshift(store.game);
@@ -1686,11 +1710,11 @@ async function doInstall() {
   installPrompt = null; render();
 }
 function settingsHTML() {
-  return `<h3>Einstellungen</h3><p class="s">Wizard Block ${APP_VERSION}</p>
+  return `<h3>Einstellungen</h3><p class="s">Stichblock ${APP_VERSION}</p>
     <div class="sec" style="margin-top:4px">Design</div>
     <div class="seg"><button class="${store.theme === 'dark' ? 'on' : ''}" data-act="settheme" data-v="dark">Dunkel</button><button class="${store.theme === 'light' ? 'on' : ''}" data-act="settheme" data-v="light">Hell</button></div>
     <div class="sec">Premium</div><div class="menu">
-      ${isPremium() ? `<div class="mi" style="cursor:default">${I.star} ${store.premiumTest && !store.premium ? 'Premium (Testzugang)' : 'Premium aktiv'}</div>${store.premiumTest && !store.premium ? `<button class="mi" data-act="premtest">${I.x} Testzugang beenden</button>` : ''}`
+      ${isPremium() ? `<div class="mi" style="cursor:default">${I.star} ${store.premiumTest && !store.premium ? 'Premium (Testzugang)' : 'Premium aktiv'}</div>${store.premiumTest && !store.premium ? `<button class="mi" data-act="premtest">${I.x} Testzugang beenden</button>` : ''}${store.premium && isNative() ? `<a class="mi" href="${manageUrl()}" target="_blank" rel="noopener">${I.gear} Abo verwalten</a>` : ''}`
         : `<button class="mi" data-act="paywall">${I.star} Werbefrei und volle Auswertung</button>`}</div>
     <div class="sec">Daten</div><div class="menu">
       <button class="mi" data-act="export">${I.down} Daten sichern</button>
@@ -1700,7 +1724,12 @@ function settingsHTML() {
       <button class="mi" data-act="feedback">${I.msg} Feedback senden</button>
       <button class="mi" data-act="rules">${I.book} Regeln und Wertung</button>
       ${canHintInstall() ? `<button class="mi" data-act="install">${I.lock} Als App installieren</button>` : ''}</div>
-    <p class="vers">Inoffizielle Fan-App ohne Verbindung zu Spieleverlagen · <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></p>`;
+    <div class="sec">Rechtliches</div><div class="menu">
+      <a class="mi" href="${legal('datenschutz.html')}" target="_blank" rel="noopener">${I.lock} Datenschutz</a>
+      <a class="mi" href="${termsUrl()}" target="_blank" rel="noopener">${I.book} Nutzungsbedingungen</a>
+      <a class="mi" href="${legal('support.html')}" target="_blank" rel="noopener">${I.msg} Hilfe und Kontakt</a>
+      <a class="mi" href="${legal('impressum.html')}" target="_blank" rel="noopener">${I.flag} Impressum</a></div>
+    <p class="vers">Inoffizielle Fan-App. Wizard ist eine Marke ihres jeweiligen Inhabers. Stichblock steht in keiner Verbindung zu AMIGO oder anderen Spieleverlagen.</p>`;
 }
 function encodeGame(g) {
   const json = JSON.stringify(g);
@@ -1716,7 +1745,7 @@ function deviceLine() {
 async function sendFeedback() {
   const ta = document.getElementById('fbtext'), msg = ta ? ta.value.trim() : '';
   const g = store.game;
-  let text = 'Feedback zu Wizard Block\n\n' + (msg || '(ohne Text)') + '\n\n' + deviceLine();
+  let text = 'Feedback zu Stichblock\n\n' + (msg || '(ohne Text)') + '\n\n' + deviceLine();
   if (g) text += `\nSpiel: ${EDITIONS[g.edition].name}, Runde ${g.current + 1} von ${totalRounds(g)}, ${nP(g)} Spieler`;
   if (g && ui.sheet.withGame) text += '\n\nDiagnosecode:\n' + encodeGame(g);
   try {
@@ -1728,17 +1757,17 @@ async function sendFeedback() {
 async function exportData() {
   const data = { app: 'wizard-block', format: 1, exported: new Date().toISOString(), version: APP_VERSION,
     history: store.history, game: store.game, paused: store.paused, setup: store.setup, lastNames: store.lastNames };
-  const name = 'wizard-block-sicherung-' + new Date().toISOString().slice(0, 10) + '.json';
+  const name = 'stichblock-sicherung-' + new Date().toISOString().slice(0, 10) + '.json';
   const json = JSON.stringify(data);
   const C = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform() ? window.Capacitor.Plugins : null;
   try {
     if (C && C.Filesystem && C.Share) {
       const w = await C.Filesystem.writeFile({ path: name, data: json, directory: 'CACHE', encoding: 'utf8' });
-      await C.Share.share({ title: 'Wizard Block Sicherung', url: w.uri });
+      await C.Share.share({ title: 'Stichblock Sicherung', url: w.uri });
       store.lastBackup = Date.now(); save(); toast('Sicherung erstellt'); return;
     }
     const file = new File([json], name, { type: 'application/json' });
-    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Wizard Block Sicherung' }); store.lastBackup = Date.now(); save(); toast('Sicherung erstellt'); return; }
+    if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Stichblock Sicherung' }); store.lastBackup = Date.now(); save(); toast('Sicherung erstellt'); return; }
   } catch (e) { if (e && e.name === 'AbortError') return; }
   try {
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' })); a.download = name;

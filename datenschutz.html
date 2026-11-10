@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17191E">
-<title>Datenschutz · Wizard Block</title>
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<title>Datenschutz · Stichblock</title>
 <style>
 @font-face{font-family:'Jakarta';font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2')}
 :root{--bg:#17191E;--card:#22252C;--ink:#F2EEE8;--ink2:#C9C4BC;--muted:#8C9099;--accent:#D98B56;--line:#343944}
@@ -12,44 +13,60 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink2);font-family:"Jakarta",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
 main{max-width:680px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 28px) 22px calc(env(safe-area-inset-bottom,0px) + 40px)}
-h1{color:var(--ink);font-size:30px;letter-spacing:-.8px;margin:0 0 6px}
+h1{color:var(--ink);font-size:30px;letter-spacing:-.8px;margin:0 0 6px;line-height:1.2}
 h2{color:var(--ink);font-size:18px;margin:30px 0 8px;letter-spacing:-.2px}
+h3{color:var(--ink);font-size:16px;margin:20px 0 4px}
 p,li{font-size:15.5px}
 .card{background:var(--card);border-radius:20px;padding:18px 20px;margin:18px 0}
 a{color:var(--accent)}
 .meta{color:var(--muted);font-size:13.5px}
 ul{padding-left:20px}
-.back{display:inline-block;margin-bottom:18px;font-weight:650;text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:22px;font-weight:650;font-size:14.5px}
+.nav a{text-decoration:none}
+.ph{background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--ink);border-radius:4px;padding:0 4px}
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
 <main>
-<a class="back" href="./">Zurück zur App</a>
+<nav class="nav"><a href="./">App</a><a href="support.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="impressum.html">Impressum</a></nav>
 <h1>Datenschutzerklärung</h1>
-<p class="meta">Wizard Block · Stand: 9. November 2026</p>
-
-<div class="card"><p style="margin:0"><b style="color:var(--ink)">Kurz gesagt:</b> Wizard Block erhebt keine personenbezogenen Daten. Es gibt kein Konto, keine Analyse und kein Tracking. Diese Web-Version lädt keine Werbung von Dritten, die Fläche am unteren Rand ist ein Platzhalter der App selbst. Alle Spielstände bleiben ausschließlich auf deinem Gerät.</p></div>
+<p class="meta">Stichblock für iPhone, Android und Web · Stand: 10. November 2026</p>
+<div class="card"><p style="margin:0"><b style="color:var(--ink)">Kurz gesagt:</b> Deine Spielstände bleiben auf deinem Gerät. Es gibt kein Konto. In der kostenlosen App-Version zeigt Google Anzeigen, dafür können Gerätedaten verarbeitet werden. Wenn du Premium kaufst, wickelt Apple oder Google die Zahlung ab und RevenueCat prüft, ob dein Abo aktiv ist. Mit Premium wird keine Werbung mehr geladen.</p></div>
 
 <h2>1. Verantwortlicher</h2>
-<p>[Vor- und Nachname]<br>[Straße und Hausnummer]<br>[PLZ und Ort]<br>E-Mail: [E-Mail-Adresse]</p>
+<p><span class="ph">[Vor- und Nachname]</span><br><span class="ph">[Straße und Hausnummer]</span><br><span class="ph">[PLZ und Ort]</span><br>Deutschland<br>E-Mail: <span class="ph">[E-Mail-Adresse]</span></p>
 
-<h2>2. Speicherung auf deinem Gerät</h2>
-<p>Spielernamen, Ansagen, Stiche, Punkte und Einstellungen werden im lokalen Speicher deines Browsers oder der App auf deinem Gerät abgelegt. Diese Daten werden nicht an uns oder Dritte übertragen. Du kannst sie jederzeit löschen, indem du den Verlauf in der App leerst, die App deinstallierst oder die Websitedaten im Browser entfernst.</p>
+<h2>2. Spielstände und Einstellungen</h2>
+<p>Spielernamen, Ansagen, Stiche, Punkte, Verlauf und Einstellungen speichert die App ausschließlich lokal auf deinem Gerät. Wir erhalten diese Daten nicht. Du kannst sie jederzeit löschen, indem du den Verlauf in der App leerst, die App deinstallierst oder bei der Web-Version die Websitedaten im Browser entfernst.</p>
 
-<h2>3. Hosting der Web-Version</h2>
-<p>Die Web-Version wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., 88 Colorado Ave, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub technisch notwendige Verbindungsdaten wie deine IP-Adresse, um die Seite auszuliefern und den Dienst abzusichern. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Näheres findest du in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>. Die Store-Versionen für iPhone und Android laden keine Inhalte aus dem Internet nach.</p>
+<h2>3. Werbung mit Google AdMob (App-Version ohne Premium)</h2>
+<p>Die kostenlose Version für iPhone und Android zeigt ein Werbebanner über Google AdMob, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei können insbesondere folgende Daten verarbeitet werden: Werbe-ID deines Geräts (IDFA unter iOS, Werbe-ID unter Android), IP-Adresse und daraus abgeleiteter ungefährer Standort, Geräte- und Systeminformationen, Interaktionen mit Anzeigen sowie Diagnosedaten. Google kann Daten auch in die USA übermitteln, gestützt auf das EU-US Data Privacy Framework und Standardvertragsklauseln.</p>
+<p>Beim ersten Start fragt dich die App über die Einwilligungsplattform von Google, ob personalisierte Werbung angezeigt werden darf. Unter iOS fragt zusätzlich das System, ob die App dein Gerät app-übergreifend verfolgen darf. Lehnst du ab, siehst du nicht personalisierte Anzeigen. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG) beziehungsweise für nicht personalisierte Anzeigen unser berechtigtes Interesse an der Finanzierung der App (Art. 6 Abs. 1 lit. f DSGVO). Du kannst deine Einwilligung jederzeit in den Systemeinstellungen (Tracking beziehungsweise Werbe-ID) widerrufen. Weitere Informationen: <a href="https://policies.google.com/privacy" rel="noopener">Datenschutzerklärung von Google</a> und <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">Datennutzung durch Google bei Partner-Apps</a>.</p>
+<p>Mit einem aktiven Premium-Abo lädt die App keine Werbung und ruft Google AdMob nicht mehr auf.</p>
 
-<h2>4. Keine Cookies, keine externen Dienste</h2>
-<p>Wizard Block setzt keine Cookies und bindet keine Dienste Dritter ein. Schrift und Grafiken sind Teil der App und werden nicht von fremden Servern geladen.</p>
+<h2>4. Premium-Abo</h2>
+<p>Der Kauf läuft vollständig über den App Store von Apple beziehungsweise Google Play. Zahlungsdaten erhalten wir nicht. Es gelten die Datenschutzbestimmungen von <a href="https://www.apple.com/de/legal/privacy/" rel="noopener">Apple</a> beziehungsweise <a href="https://policies.google.com/privacy" rel="noopener">Google</a>.</p>
+<p>Um zu prüfen, ob dein Abo aktiv ist, nutzen wir RevenueCat, einen Dienst der RevenueCat, Inc., 1032 E Brandon Blvd #3003, Brandon, FL 33511, USA. Dabei werden eine zufällig erzeugte Kennung ohne Bezug zu deinem Namen, Kaufbelege des Stores (Produkt, Kaufdatum, Ablaufdatum, Land, Preis) sowie technische Geräteinformationen verarbeitet. Rechtsgrundlage ist die Erfüllung des Vertrags (Art. 6 Abs. 1 lit. b DSGVO). Die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln. Weitere Informationen: <a href="https://www.revenuecat.com/privacy" rel="noopener">Datenschutzerklärung von RevenueCat</a>.</p>
 
-<h2>5. Feedback und Sicherungen</h2>
-<p>Wenn du die Funktionen „Feedback senden“ oder „Daten sichern“ nutzt, erstellt die App eine Nachricht beziehungsweise eine Datei und übergibt sie an die Teilen-Funktion deines Geräts. Wohin sie geht, entscheidest allein du, zum Beispiel per Messenger, E-Mail oder in deinen Cloudspeicher. Für die Verarbeitung dort gelten die Bedingungen des jeweiligen Anbieters. Ein angehängter Spielstand enthält die Spielernamen und Punkte der Partie.</p>
+<h2>5. Web-Version und Hosting</h2>
+<p>Die Web-Version und diese Seiten werden über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., 88 Colorado Ave, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub technisch notwendige Verbindungsdaten wie deine IP-Adresse, um die Seiten auszuliefern und den Dienst abzusichern. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Die Web-Version zeigt keine Werbung Dritter. Näheres in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
 
-<h2>6. Deine Rechte</h2>
-<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Da wir keine Daten über dich speichern, wende dich bei Fragen gerne an die oben genannte Adresse.</p>
+<h2>6. Feedback und Sicherungen</h2>
+<p>Bei „Feedback senden“ und „Daten sichern“ erstellt die App eine Nachricht beziehungsweise Datei und übergibt sie an die Teilen-Funktion deines Geräts. Wohin sie geht, entscheidest allein du. Schickst du uns Feedback, verarbeiten wir die Nachricht und die darin enthaltenen Angaben (Gerätetyp, App-Version, auf Wunsch der Spielstand mit Spielernamen) nur zur Bearbeitung deines Anliegens (Art. 6 Abs. 1 lit. f DSGVO) und löschen sie, sobald sie dafür nicht mehr nötig sind.</p>
 
-<h2>7. Hinweis</h2>
-<p>Wizard Block ist eine inoffizielle Fan-App und steht in keiner Verbindung zu AMIGO Spiel + Freizeit GmbH oder anderen Spieleverlagen.</p>
+<h2>7. Keine Analyse, keine Cookies</h2>
+<p>Die App nutzt keine Analyse- oder Statistikdienste und setzt keine Cookies. Schrift und Grafiken sind Teil der App und werden nicht von fremden Servern geladen.</p>
+
+<h2>8. Kinder</h2>
+<p>Die App richtet sich nicht gezielt an Kinder unter 16 Jahren. Die angezeigte Werbung ist auf allgemein geeignete Inhalte beschränkt.</p>
+
+<h2>9. Deine Rechte</h2>
+<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen. Für Anfragen genügt eine E-Mail an die oben genannte Adresse.</p>
+
+<h2>10. Änderungen</h2>
+<p>Wir passen diese Erklärung an, wenn sich die App oder die Rechtslage ändert. Es gilt die jeweils hier veröffentlichte Fassung.</p>
+<footer>Stichblock ist eine inoffizielle Fan-App. Wizard ist eine Marke ihres jeweiligen Inhabers. Stichblock steht in keiner Verbindung zu AMIGO Spiel + Freizeit GmbH oder anderen Spieleverlagen.</footer>
 </main>
 </body>
 </html>

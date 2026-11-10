@@ -1,6 +1,6 @@
 {
   "appId": "de.moritz.wizardblock",
-  "appName": "Wizard Block",
+  "appName": "Stichblock",
   "webDir": "www",
   "backgroundColor": "#17191E",
   "ios": { "contentInset": "never", "scrollEnabled": true },

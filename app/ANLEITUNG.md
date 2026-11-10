@@ -1,4 +1,6 @@
-# Wizard Block als Mobile App
+# Stichblock als Mobile App
+
+Alles für die Einreichung bei Apple (Texte, Screenshots, Datenschutzangaben, Abo, Prüfnotizen) steht in `appstore/APP-STORE-UNTERLAGEN.md`.
 
 Es gibt zwei Wege, die sich nicht ausschließen.
 
